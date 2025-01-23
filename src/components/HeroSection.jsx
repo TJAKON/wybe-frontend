@@ -1,83 +1,104 @@
 import React from "react";
+import mockData from "./mockData"; // Importing the mock data
 
 const HeroSection = () => {
-  return (
-    <>
-      {/* <div className="place-items-center text-center w-full">
-        <img src="/banner.png" alt="Rocket" className="w-full bg-transparent" />
-      </div> */}
-      <div className=" text-white py-8 flex flex-col md:flex-row items-center justify-between container mx-auto px-4">
-        {/* Left Section */}
+  const highestProgressCard = mockData.reduce((max, item) =>
+    item.progress > max.progress ? item : max
+  );
+  const lowestProgressCard = mockData.reduce((min, item) =>
+    item.progress < min.progress ? item : min
+  );
 
-        <div className="flex-1 place-items-center space-y-4 text-center">
-          <img src="/wybe.svg" alt="Rocket" className="bg-black" />
-          <p className="text-lg font-jetbrains text-gray-300">
+  return (
+    <div className="text-white py-12">
+      {/* Main Container */}
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+        {/* Left Section */}
+        <div className="flex-1 space-y-6 text-center justify-items-center md:text-left">
+          <img
+            src="/wybe.svg"
+            alt="Logo"
+            className="mx-auto md:mx-0 w-72 h-auto"
+          />
+          <p className="text-lg font-light text-gray_300">
             Innovative solutions at your fingertips
           </p>
         </div>
 
         {/* Right Section */}
+        <div className="flex-1 mt-8 md:mt-0 space-y-6">
+          {/* Card 1 */}
+          <div className="rounded-xl border border-gray_700 p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 shadow-lg hover:shadow-2xl transition duration-300">
+            <div className="w-48 h-48 rounded-lg overflow-hidden border-gray_700 flex-shrink-0 mb-4 md:mb-0">
+              <img
+                src={highestProgressCard.image}
+                alt={highestProgressCard.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="text-center md:text-left">
+              <h2 className="text-sm font-semibold text-orange uppercase">
+                Created By: {highestProgressCard.creator}
+              </h2>
+              <h3 className="text-2xl font-bold text-white">
+                {highestProgressCard.name} ({highestProgressCard.symbol})
+              </h3>
+              <p className="text-sm text-gray_400 mt-2">
+                {highestProgressCard.description}
+              </p>
+              <div className="mt-4">
+                <p className="text-gray_500 text-sm">
+                  <strong>Market Cap:</strong> {highestProgressCard.marketCap}
+                </p>
+                <p className="text-gray_500 text-sm">
+                  <strong>Listed On:</strong> Wybe
+                </p>
+              </div>
+              <div className="mt-4">
+                <button className="bg-orange hover:bg-purple px-4 py-2 rounded-lg text-white font-bold transition">
+                  More Details
+                </button>
+              </div>
+            </div>
+          </div>
 
-        <div className="p-6 rounded-lg shadow-xl hover:shadow-2xl transition duration-300">
-          <div className="flex items-center bg-orange space-x-4 border-4 rounded-xl p-4 border-lightGray mb-3">
-            <div className=" w-auto h-auto rounded-lg border-4 border-black flex items-center justify-center">
-              <img src="/Rectangle1665.jpg" className="rounded-lg" />
+          {/* Card 2 */}
+          <div className="rounded-xl border border-gray_700 p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 shadow-lg hover:shadow-2xl transition duration-300">
+            <div className="w-48 h-48 rounded-lg overflow-hidden border-gray-600 flex-shrink-0 mb-4 md:mb-0">
+              <img
+                src={lowestProgressCard.image}
+                alt={lowestProgressCard.name}
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="flex-1">
-              <h2 className="text-lg font-bold text-orange-500 uppercase">
-                Created By:
+            <div className="text-center md:text-left">
+              <h2 className="text-sm font-semibold text-orange uppercase">
+                Created By: {lowestProgressCard.creator}
               </h2>
-              <h3 className="text-2xl font-bold text-white">Coin Name</h3>
-              <p className="text-sm text-gray-400 mt-2">
-                Coin description goes here. This is a placeholder for coin
-                details.
+              <h3 className="text-2xl font-bold text-white">
+                {lowestProgressCard.name} ({highestProgressCard.symbol})
+              </h3>
+              <p className="text-sm text-gray_400 mt-2">
+                {lowestProgressCard.description}
               </p>
               <div className="mt-4">
-                <p className="text-gray-500 text-sm">
-                  <strong>Market Cap:</strong> $1,000,000
+                <p className="text-gray_500 text-sm">
+                  <strong>Market Cap:</strong> {lowestProgressCard.marketCap}
                 </p>
-                <p className="text-gray-500 text-sm">
-                  <strong>Listed On:</strong> Suplaunch
+                <p className="text-gray_500 text-sm">
+                  <strong>Listed On:</strong> Wybe
                 </p>
               </div>
               <div className="mt-4">
-                <button className=" bg-purple hover:bg-white hover:text-black px-4 py-2 rounded-lg text-white font-bold">
+                <button className="bg-orange hover:bg-purple px-4 py-2 rounded-lg text-white font-bold transition">
                   More Details
                 </button>
               </div>
             </div>
           </div>
-          <div className="flex items-center bg-purple space-x-4 border-4 rounded-xl p-4 border-white mb-3">
-            <div className=" w-auto h-auto rounded-lg border-4 border-black flex items-center justify-center">
-              <img src="/Rectangle1665.jpg" className="rounded-lg" />
-            </div>
-            <div className="flex-1">
-              <h2 className="text-lg font-bold text-orange-500 uppercase">
-                Created By:
-              </h2>
-              <h3 className="text-2xl font-bold text-white">Coin Name</h3>
-              <p className="text-sm text-gray-400 mt-2">
-                Coin description goes here. This is a placeholder for coin
-                details.
-              </p>
-              <div className="mt-4">
-                <p className="text-gray-500 text-sm">
-                  <strong>Market Cap:</strong> $1,000,000
-                </p>
-                <p className="text-gray-500 text-sm">
-                  <strong>Listed On:</strong> Suplaunch
-                </p>
-              </div>
-              <div className="mt-4">
-                <button className=" bg-orange hover:bg-white hover:text-black px-4 py-2 rounded-lg text-white font-bold">
-                  More Details
-                </button>
-              </div>
-            </div>
-          </div>
-        </div> 
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

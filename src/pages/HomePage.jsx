@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import SearchFilter from "../components/SearchFilter";
 import LaunchCard from "../components/LaunchCard";
 import mockData from "../components/mockData";
+import { InfiniteSlider } from "../components/InfiniteSlider";
 
 // const mockData = [
 //   { id: 1, name: "Coin Name 1", creator: "Creator 1", progress: 75 },
@@ -298,9 +299,10 @@ const HomePage = () => {
       {/* Main Content */}
       <div className="flex-grow">
         <HeroSection />
+        <InfiniteSlider/>
         <SearchFilter />
         <div className="text-center w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4">
             {mockData.map((item) => (
               <LaunchCard
                 key={item.id}
@@ -312,7 +314,12 @@ const HomePage = () => {
                 description={item.description}
               />
             ))}
-          </div>
+          </div> */}
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+            {mockData.map((coin) => (
+              <LaunchCard key={coin.id} {...coin} />
+            ))}
+          </div> */}
         </div>
       </div>
     </div>

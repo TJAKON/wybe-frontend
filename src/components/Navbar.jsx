@@ -1,57 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaTelegram, FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <nav className="text-white">
-      <header className="flex justify-between items-center px-6 py-4">
-        {/* <nav className="space-x-4 flex items-center justify-between font-poppins text-xl italic"> */}
-        <div className="flex flex-wrap justify-between items-center space-x-6">
-          {/* <div className="absolute flex flex-wrap items-center w-8">
-            <img src="/rocket-2.svg" className="relative top-10 right-6" alt="" />
-            <img src="/rocket1.svg" className="relative right-2 bottom-6" alt="" />
-          </div>
-          <h1 className="text-2xl font-bold text-orange">
-            <Link to="/" className="font-poppins italic">
-              Wybe
-            </Link>
-          </h1> */}
-          <Link to="/" className="font-poppins italic px-14 py-3">
-            <img src="/wybe.svg" className="w-20" alt="" />
+    <nav className=" bg-gradient-to-r from-black to-stone text-white">
+      <header className="flex justify-between items-center px-6 py-2">
+        {/* Logo */}
+        <Link to="/" className="font-poppins italic flex items-center">
+          <img src="/wybe.svg" className="w-20" alt="Wybe Logo" />
+        </Link>
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex space-x-8 items-center font-poppins text-xl italic">
+          <Link to="/" className="hover:text-orange underline">
+            HOME
           </Link>
-          <div className="space-x-8 flex items-center justify-between font-poppins text-2xl italic">
-            <Link to="/" className="hover:text-orange underline">
-              HOME
-            </Link>
-            {/* <Link to="/launch" className="hover:text-orange">
-            LAUNCH
-          </Link> */}
-            <Link to="/ranking" className="hover:text-orange underline">
-              RANKING
-            </Link>
-            <Link to="/docs" className="hover:text-orange underline">
-              DOCS
-            </Link>
-          </div>
+          <Link to="/ranking" className="hover:text-orange underline">
+            RANKING
+          </Link>
+          <Link to="/docs" className="hover:text-orange underline">
+            DOCS
+          </Link>
         </div>
 
-        <div className="space-x-4 flex font-poppins text-xl">
-          <div className="flex items-center space-x-2">
-            <FaXTwitter className=" border border-orange hover:bg-orange rounded-lg hover:text-black text-white w-16 h-16 p-2" />
-            <FaTelegram className=" border border-orange hover:bg-orange rounded-lg hover:text-black text-white w-16 h-16 p-2" />
-          </div>
+        {/* Social Icons and Buttons */}
+        <div className="hidden md:flex space-x-4 items-center">
+          <FaXTwitter className="border border-orange hover:bg-orange rounded-lg hover:text-black text-white w-12 h-12 p-2" />
+          <FaTelegram className="border border-orange hover:bg-orange rounded-lg hover:text-black text-white w-12 h-12 p-2" />
           <Link to="/launch">
-            <button className=" px-6 py-4 rounded-lg font-bold font-poppins bg-transparent border border-orange hover:bg-orange hover:text-black">
+            <button className="px-6 py-3 rounded-lg font-bold font-poppins bg-transparent border border-orange hover:bg-orange hover:text-black">
               Launch Token
             </button>
           </Link>
-          <button className=" px-6 py-4 rounded-lg font-bold font-poppins bg-orange hover:bg-white hover:text-black">
+          <button className="px-6 py-3 rounded-lg font-bold font-poppins bg-orange hover:bg-white hover:text-black">
             CONNECT WALLET
           </button>
         </div>
-        {/* </nav> */}
+
+        {/* Hamburger Menu for Mobile */}
+        <button
+          className="md:hidden text-orange focus:outline-none text-3xl"
+          onClick={toggleMenu}
+        >
+          {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+        </button>
       </header>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-transparent text-white">
+          <div className="flex flex-col items-center space-y-4 py-4 text-xl">
+            <Link to="/" className="hover:text-orange" onClick={toggleMenu}>
+              HOME
+            </Link>
+            <Link to="/ranking" className="hover:text-orange" onClick={toggleMenu}>
+              RANKING
+            </Link>
+            <Link to="/docs" className="hover:text-orange" onClick={toggleMenu}>
+              DOCS
+            </Link>
+            <div className="flex space-x-4">
+              <FaXTwitter className="border border-orange hover:bg-orange rounded-lg hover:text-black text-white w-10 h-10 p-2" />
+              <FaTelegram className="border border-orange hover:bg-orange rounded-lg hover:text-black text-white w-10 h-10 p-2" />
+            </div>
+            <Link to="/launch">
+              <button className="px-6 py-3 rounded-lg font-bold font-poppins bg-transparent border border-orange hover:bg-orange hover:text-black">
+                Launch Token
+              </button>
+            </Link>
+            <button className="px-6 py-3 rounded-lg font-bold font-poppins bg-orange hover:bg-white hover:text-black">
+              CONNECT WALLET
+            </button>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
