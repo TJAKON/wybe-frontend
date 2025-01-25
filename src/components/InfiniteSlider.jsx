@@ -36,7 +36,7 @@ import {
               className="slide flex w-[200px] items-center justify-center"
               key={index}
             >
-                <img src={coin.image} className="w-12 h-12" alt="" />
+                <img src={coin.image} className="w-12 h-12 " alt="" />
               {/* {coin.image} */}
             </div>
           ))}

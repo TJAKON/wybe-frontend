@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" bg-gradient-to-r from-black to-stone text-white">
+    <nav className=" bg-black text-white">
       <header className="flex justify-between items-center px-6 py-2">
         {/* Logo */}
         <Link to="/" className="font-poppins italic flex items-center">
@@ -19,15 +19,15 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-8 items-center font-poppins text-xl italic">
+        <div className="hidden md:flex space-x-8 items-center font-poppins text-xl">
           <Link to="/" className="hover:text-orange underline">
-            HOME
+            Home
           </Link>
           <Link to="/ranking" className="hover:text-orange underline">
-            RANKING
+            Ranking
           </Link>
           <Link to="/docs" className="hover:text-orange underline">
-            DOCS
+            Docs
           </Link>
         </div>
 

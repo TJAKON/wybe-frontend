@@ -6,7 +6,7 @@ const SearchFilter = () => {
   const [activeTab, setActiveTab] = useState("all");
 
   // Tabs: Define the categories
-  const tabs = ["All", "Trading", "Finalized", "Top MC", "New"];
+  const tabs = ["All", "Trading", "Finalized", "MC", "New"];
 
   // Handle tab switching
   const handleTabChange = (tab) => {

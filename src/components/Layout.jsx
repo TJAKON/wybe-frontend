@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 const Layout = ({ children }) => {
   return (
-    <div className="bg-gradient-to-r from-black  to-stone text-white min-h-screen flex flex-col relative">
+    <div className="bg-gradient-to-r from-black  to-black text-white min-h-screen flex flex-col relative">
       {/* Navbar fixed at the top */}
       <Navbar />                        
 

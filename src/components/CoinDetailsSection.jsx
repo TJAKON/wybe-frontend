@@ -12,7 +12,6 @@ IgrFinancialChartModule.register();
 const CoinDetailsSection = () => {
   const { coinId } = useParams();
   const [data, setData] = useState([]);
-
   const [chartData, setChartData] = useState([]);
 
   // Simulated API call to fetch historical data
@@ -633,15 +632,6 @@ const CoinDetailsSection = () => {
     fetchHistoricalData();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const stocks = await StocksHistory.getMultipleStocks();
-  //     setData(stocks);
-  //   };
-  //   fetchData();
-  // }, []);
-
-  // Convert coinId to a number and find the coin
   const coin = mockData.find((coin) => coin.id === Number(coinId));
 
   if (!coin) {
@@ -649,148 +639,383 @@ const CoinDetailsSection = () => {
   }
 
   return (
-    <div className=" text-white min-h-screen w-full py-8 px-4">
-      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-8">
-        {/* Left Column */}
-        <div className="col-span-1 space-y-4">
-          <div className="bg-purple cursor-pointer border-2 border-white p-6 rounded-lg shadow-lg">
+    <div className="text-gray-300 bg-stone-900 min-h-screen w-full py-8 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {/* Section 1: Coin Details */}
+        <div className="space-y-4 md:col-span-3 lg:col-span-1 xl:col-span-1">
+          {/* Coin Information */}
+          <div className="bg-gray-700 hover:border-yellow hover:bg-stone  border-2 border-yellow-500 p-6 rounded-lg shadow-lg">
             <div className="flex items-center space-x-4">
-              <img src={coin.image} alt={coin.name} className="w-16 h-16" />
+              <img src={coin.image} alt={coin.name} className="w-16 h-16 rounded-full border-2 border-yellow-500" />
               <div>
-                <h2 className="text-lg font-bold">Created By:</h2>
-                <h3 className="text-2xl font-bold">{coin.creator}</h3>
+                <h2 className="text-lg font-bold text-yellow-500">Created By:</h2>
+                <h3 className="text-2xl font-bold text-gray-200">{coin.creator}</h3>
               </div>
             </div>
-            <p className="mt-4">{coin.description}</p>
-            <p className="mt-2 font-bold">Contract: {coin.contractAddress}</p>
+            <p className="mt-4 text-gray-400">{coin.description}</p>
+            <p className="mt-2 font-bold text-yellow-500">Contract: {coin.contractAddress}</p>
           </div>
 
           {/* Coin Visual */}
-          <div className="bg-gray border-2 cursor-pointer hover:bg-transparent border-purple p-6 rounded-lg shadow-lg">
-            <h2 className="text-lg font-bold mb-4">{coin.name}</h2>
+          <div className="hidden sm:block bg-stone hover:border-yellow hover:bg-black  border-2 border-gray-700 p-6 rounded-lg shadow-lg">
+            <h2 className="text-lg font-bold mb-4 text-yellow-500">{coin.name}</h2>
             <img
               src={coin.image}
               alt={coin.name}
-              className="w-full h-full` object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg"
             />
           </div>
-        </div>
-        <div className="col-span-2 space-y-4">
-          {/* Coin Details Card */}
-          {/* 
-          <div className=" border-2 border-purple rounded-lg shadow-lg">
-            <div className=" " style={{ height: "732px" }}>
-              <IgrFinancialChart
-                width="100%"
-                height="100%"
-                chartType="Line"
-                thickness={2}
-                chartTitle="Google vs Microsoft Changes"
-                subtitle="Between 2013 and 2017"
-                yAxisMode="PercentChange"
-                yAxisTitle="Percent Changed"
-                dataSource={data}
-              />
-            </div>
-          </div> */}
 
-          <div className="col-span-2">
-            <div className="border-2 border-purple rounded-lg shadow-lg">
-              <TradingChart data={chartData} />
-            </div>
-          </div>
-        </div>
-
-        {/* Middle Column */}
-        <div className="col-span-1 space-y-4">
-          {/* Coin Stats */}
-
-          {/* Buy/Sell Box */}
-          <div className="bg-gray border-2 border-purple p-6 rounded-lg shadow-lg">
-            {/* Buy/Sell Buttons */}
+          {/* Buy/Sell Box (Visible on small screens) */}
+          <div className="bg-gray-700 border-2 hover:border-yellow hover:bg-stone  border-yellow-500 p-6 rounded-lg shadow-lg sm:hidden">
             <div className="flex justify-between">
-              <button className="bg-orange px-4 py-2 rounded-lg font-bold">
+              <button className="bg-yellow-500 px-4 py-2 rounded-lg font-bold text-gray-900">
                 Buy
               </button>
-              <button className="bg-purple px-4 py-2 rounded-lg font-bold">
+              <button className="bg-gray-400 px-4 py-2 rounded-lg font-bold text-gray-900">
                 Sell
               </button>
             </div>
-            {/* Amount Input */}
             <div className="mt-4">
-              <h3 className="text-lg font-bold">Enter the Amount</h3>
+              <h3 className="text-lg font-bold text-yellow-500">Enter the Amount</h3>
               <div className="flex items-center mt-2 space-x-2">
                 <input
                   type="number"
-                  className="bg-white text-black px-4 py-2 w-full rounded-lg focus:outline-none"
+                  className="bg-stone-800 text-gray-300 px-4 py-2 w-full rounded-lg focus:outline-none"
                   placeholder="0.00"
                 />
-                <span className="text-lg font-bold">{coin.symbol}</span>
+                <span className="text-lg font-bold text-yellow-500">{coin.symbol}</span>
               </div>
             </div>
-            {/* Quick Amounts */}
             <div className="mt-4 space-x-2">
-              <button className="px-4 py-2 bg-gray-700 rounded-lg">100</button>
-              <button className="px-4 py-2 bg-gray-700 rounded-lg">500</button>
-              <button className="px-4 py-2 bg-gray-700 rounded-lg">1000</button>
-              <button className="px-4 py-2 bg-gray-700 rounded-lg">
-                10000
-              </button>
+              {[100, 500, 1000, 10000].map((amount) => (
+                <button
+                  key={amount}
+                  className="px-4 py-2 bg-gray-400 text-gray-900 rounded-lg hover:bg-gray-500"
+                >
+                  {amount}
+                </button>
+              ))}
             </div>
-            <button className="w-full bg-purple mt-4 bg-orange-500 px-4 py-2 rounded-lg font-bold">
+            <button className="w-full bg-orange hover:bg-white hover:text-black mt-4 px-4 py-2 rounded-lg font-bold text-gray-900">
               Connect Wallet
             </button>
           </div>
 
           {/* Bonding Curve */}
-          <div className="bg-gray border-2 border-purple p-6 rounded-lg shadow-lg">
-            <h3 className="text-lg font-bold mb-4">Bonding Curve Progress</h3>
-            <div className="w-full bg-gray-700 h-4 rounded-full overflow-hidden">
+          <div className="bg-stone-800 border-2 hover:border-yellow hover:bg-stone  border-yellow-500 p-6 rounded-lg shadow-lg sm:hidden">
+            <h3 className="text-lg font-bold mb-4 text-yellow-500">Bonding Curve Progress</h3>
+            <div className="w-full bg-gray-400 h-4 rounded-full overflow-hidden">
               <div
-                className="bg-orange h-4"
+                className="bg-gradient-to-r from-stone via-yellow to-orange h-2"
                 style={{ width: `${coin.progress}%` }}
               ></div>
             </div>
-            <p className="mt-4 text-sm">
+            <p className="mt-4 text-sm text-gray-400">
               Additional description about the bonding curve and its relevance.
             </p>
           </div>
+        </div>
+
+        {/* Section 2: Graph and Other Details */}
+        <div className="md:col-span-3 lg:col-span-2 xl:col-span-2 space-y-4">
+          {/* Trading Chart */}
+          <div className="border-2 border-gray hover:border-yellow hover:bg-stone bg-stone rounded-lg shadow-lg">
+            <TradingChart data={chartData} />
+          </div>
+
+          {/* Transaction Table */}
+          <div className="relative hidden sm:block hover:border-yellow hover:bg-stone  overflow-x-auto shadow-md sm:rounded-lg">
+            <table className="w-full text-sm border border-gray-700 text-left text-gray-400">
+              <thead className="text-xs uppercase bg-gray-700 text-gray-300">
+                <tr>
+                  {['Time', 'Type', 'USD', 'NICKCAT', 'BNB', 'Address', 'Txs'].map((header) => (
+                    <th key={header} scope="col" className="px-6 py-3">
+                      {header}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Section 3: Holder Distribution and Comments */}
+        <div className="space-y-4 md:col-span-3 lg:col-span-3 xl:col-span-1">
+          {/* Buy/Sell Box */}
+          <div className="hidden sm:block bg-gray-700 hover:border-yellow hover:bg-stone border-2 border-yellow-500 p-6 rounded-lg shadow-lg">
+            <div className="flex justify-between">
+              <button className="bg-yellow-500 px-4 py-2 rounded-lg font-bold text-gray-900">
+                Buy
+              </button>
+              <button className="bg-gray-400 px-4 py-2 rounded-lg font-bold text-gray-900">
+                Sell
+              </button>
+            </div>
+            <div className="mt-4">
+              <h3 className="text-lg font-bold text-yellow-500">Enter the Amount</h3>
+              <div className="flex items-center mt-2 space-x-2">
+                <input
+                  type="number"
+                  className="bg-stone-800 text-gray-300 px-4 py-2 w-full rounded-lg focus:outline-none"
+                  placeholder="0.00"
+                />
+                <span className="text-lg font-bold text-yellow-500">{coin.symbol}</span>
+              </div>
+            </div>
+            <div className="mt-4 space-x-2">
+              {[100, 500, 1000, 10000].map((amount) => (
+                <button
+                  key={amount}
+                  className="px-4 py-2 bg-gray-400 text-gray-900 rounded-lg hover:bg-gray-500"
+                >
+                  {amount}
+                </button>
+              ))}
+            </div>
+            <button className="w-full bg-yellow-500 mt-4 px-4 py-2 rounded-lg font-bold text-gray-900">
+              Connect Wallet
+            </button>
+          </div>
 
           {/* Holder Distribution */}
-          <div className="bg-gray border-2 border-purple p-6 rounded-lg shadow-lg">
-            <h3 className="text-lg font-bold mb-4">Holder Distribution</h3>
+          <div className="bg-stone-800 hover:border-yellow hover:bg-stone  border-2 border-yellow-500 p-6 rounded-lg shadow-lg">
+            <h3 className="text-lg font-bold mb-4 text-yellow-500">Holder Distribution</h3>
             <div className="space-y-2">
-              <div className="flex justify-between text-sm border-b pb-2">
-                <span>Whales</span>
-                <span>{coin.holderDistribution.whales}</span>
-              </div>
-              <div className="flex justify-between text-sm border-b pb-2">
-                <span>Investors</span>
-                <span>{coin.holderDistribution.investors}</span>
-              </div>
-              <div className="flex justify-between text-sm border-b pb-2">
-                <span>Retail</span>
-                <span>{coin.holderDistribution.retail}</span>
-              </div>
+              {Object.entries(coin.holderDistribution).map(([key, value]) => (
+                <div key={key} className="flex justify-between text-sm border-b pb-2 text-gray-400">
+                  <span className="capitalize">{key}</span>
+                  <span>{value}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Comments Section */}
-          <div className="bg-gray border-2 border-purple p-6 rounded-lg shadow-lg">
-            <div className="flex justify-between border-b border-gray-700 pb-2">
-              <h3 className="font-bold text-lg">Comments</h3>
-              <h3 className="font-bold text-lg">Trade History</h3>
-            </div>
-            <div className="mt-4">
-              <textarea
-                className="w-full bg-white text-gray p-4 rounded-lg focus:outline-none"
-                placeholder="Write your comment..."
-                rows={3}
-              ></textarea>
-              <button className="w-full mt-2 bg-orange px-4 py-2 rounded-lg font-bold">
-                Submit
-              </button>
-            </div>
+          <div className="relative block sm:hidden md:hidden overflow-x-auto shadow-md sm:rounded-lg">
+            <table className="w-full text-sm border border-gray-700 text-left text-gray-400">
+              <thead className="text-xs uppercase bg-gray-700 text-gray-300">
+                <tr>
+                  {['Time', 'Type', 'USD', 'NICKCAT', 'BNB', 'Address', 'Txs'].map((header) => (
+                    <th key={header} scope="col" className="px-6 py-3">
+                      {header}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

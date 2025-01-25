@@ -10,10 +10,30 @@ const HeroSection = () => {
   );
 
   return (
-    <div className="text-white py-12">
-      {/* Main Container */}
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-        {/* Left Section */}
+    <div className="text-white pb-5">
+      {/* <div className="flex-1 space-y-6 text-center justify-items-center md:text-left">
+        <img
+          src="/wybeBanner.jpg"
+          alt="Logo"
+          className="mx-auto md:mx-0 w-full h-auto object-cover"
+        />
+      </div> */}
+      <div className="flex-1 hidden sm:block w-full text-center justify-items-center md:text-left">
+        <img
+          src="/wybeBanner.jpg"
+          alt="Logo"
+          className="mx-auto md:mx-0 w-full h-auto"
+        />
+      </div>
+      <div className="flex-1 block sm:hidden w-auto sm:h-[500px] text-center justify-items-center md:text-left">
+        <img
+          src="/wybeBanner.jpg"
+          alt="Logo"
+          className="mx-auto md:mx-0 w-auto h-[500px] sm:h-[500px] object-cover"
+        />
+      </div>
+
+      {/* <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="flex-1 space-y-6 text-center justify-items-center md:text-left">
           <img
             src="/wybe.svg"
@@ -25,9 +45,7 @@ const HeroSection = () => {
           </p>
         </div>
 
-        {/* Right Section */}
         <div className="flex-1 mt-8 md:mt-0 space-y-6">
-          {/* Card 1 */}
           <div className="rounded-xl border border-gray_700 p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 shadow-lg hover:shadow-2xl transition duration-300">
             <div className="w-48 h-48 rounded-lg overflow-hidden border-gray_700 flex-shrink-0 mb-4 md:mb-0">
               <img
@@ -62,7 +80,6 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Card 2 */}
           <div className="rounded-xl border border-gray_700 p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 shadow-lg hover:shadow-2xl transition duration-300">
             <div className="w-48 h-48 rounded-lg overflow-hidden border-gray-600 flex-shrink-0 mb-4 md:mb-0">
               <img
@@ -97,7 +114,7 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
