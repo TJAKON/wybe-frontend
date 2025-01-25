@@ -639,26 +639,59 @@ const CoinDetailsSection = () => {
   }
 
   return (
-    <div className="text-gray-300 bg-stone-900 min-h-screen w-full py-8 px-4">
+    <div className="text-gray_300 bg-stone-900 min-h-screen w-full py-8 px-4">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {/* Section 1: Coin Details */}
         <div className="space-y-4 md:col-span-3 lg:col-span-1 xl:col-span-1">
           {/* Coin Information */}
-          <div className="bg-gray-700 hover:border-yellow hover:bg-stone  border-2 border-yellow-500 p-6 rounded-lg shadow-lg">
+          <div className="hidden sm:block bg-black hover:border-gray_900 transition-all duration-300 hover:bg-stone  border-2 border-yellow-500 p-6 rounded-lg shadow-lg">
             <div className="flex items-center space-x-4">
-              <img src={coin.image} alt={coin.name} className="w-16 h-16 rounded-full border-2 border-yellow-500" />
+              <img
+                src={coin.image}
+                alt={coin.name}
+                className="w-16 h-16 rounded-full border-2"
+              />
               <div>
-                <h2 className="text-lg font-bold text-yellow-500">Created By:</h2>
-                <h3 className="text-2xl font-bold text-gray-200">{coin.creator}</h3>
+                <h2 className="text-lg font-bold text-yellow-500">
+                  Created By:
+                </h2>
+                <h3 className="text-2xl font-bold text-gray-200">
+                  {coin.creator}
+                </h3>
               </div>
             </div>
             <p className="mt-4 text-gray-400">{coin.description}</p>
-            <p className="mt-2 font-bold text-yellow-500">Contract: {coin.contractAddress}</p>
+            <p className="mt-2 font-bold text-yellow-500">
+              Contract: {coin.contractAddress}
+            </p>
+          </div>
+          <div className="block sm:hidden bg-stone border-gray_900 transition-all duration-300   border-2  p-6 rounded-lg shadow-lg">
+            <div className="flex items-center space-x-4">
+              <img
+                src={coin.image}
+                alt={coin.name}
+                className="w-16 h-16 rounded-full border-2"
+              />
+              <div>
+                <h2 className="text-lg font-bold text-yellow-500">
+                  Created By:
+                </h2>
+                <h3 className="text-2xl font-bold text-gray-200">
+                  {coin.creator}
+                </h3>
+              </div>
+            </div>
+            <p className="mt-4 text-gray-400">{coin.description}</p>
+            <p className="mt-2 font-bold text-yellow-500">
+              Contract: {coin.contractAddress}
+            </p>
           </div>
 
           {/* Coin Visual */}
-          <div className="hidden sm:block bg-stone hover:border-yellow hover:bg-black  border-2 border-gray-700 p-6 rounded-lg shadow-lg">
-            <h2 className="text-lg font-bold mb-4 text-yellow-500">{coin.name}</h2>
+          <div className="hidden sm:block bg-black hover:border-gray_900 transition-all duration-300 hover:bg-stone border-2 border-gray-700 p-6 rounded-lg shadow-lg">
+            <h2 className="text-lg font-bold mb-4 text-yellow-500">
+              {coin.name}
+            </h2>
             <img
               src={coin.image}
               alt={coin.name}
@@ -667,69 +700,92 @@ const CoinDetailsSection = () => {
           </div>
 
           {/* Buy/Sell Box (Visible on small screens) */}
-          <div className="bg-gray-700 border-2 hover:border-yellow hover:bg-stone  border-yellow-500 p-6 rounded-lg shadow-lg sm:hidden">
+          <div className="bg-stone  border-2 border-gray_900 hover:bg-stone  border-yellow-500 p-6 rounded-lg shadow-lg sm:hidden">
             <div className="flex justify-between">
-              <button className="bg-yellow-500 px-4 py-2 rounded-lg font-bold text-gray-900">
-                Buy
+              <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-lg font-bold text-black hover:bg-purple hover:text-white">
+                BUY
               </button>
-              <button className="bg-gray-400 px-4 py-2 rounded-lg font-bold text-gray-900">
-                Sell
+              <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-lg font-bold text-black hover:bg-purple hover:text-white">
+                SELL
               </button>
             </div>
             <div className="mt-4">
-              <h3 className="text-lg font-bold text-yellow-500">Enter the Amount</h3>
+              <h3 className="text-lg font-bold text-yellow-500">
+                Enter the Amount
+              </h3>
               <div className="flex items-center mt-2 space-x-2">
                 <input
                   type="number"
-                  className="bg-stone-800 text-gray-300 px-4 py-2 w-full rounded-lg focus:outline-none"
+                  className="bg-stone-800 text-black px-4 py-2 w-full rounded-lg focus:outline-none"
                   placeholder="0.00"
                 />
-                <span className="text-lg font-bold text-yellow-500">{coin.symbol}</span>
+                <span className="text-lg font-bold text-yellow-500">
+                  {coin.symbol}
+                </span>
               </div>
             </div>
             <div className="mt-4 space-x-2">
               {[100, 500, 1000, 10000].map((amount) => (
                 <button
                   key={amount}
-                  className="px-4 py-2 bg-gray-400 text-gray-900 rounded-lg hover:bg-gray-500"
+                  className="px-4 py-2 bg-gray_700 transition-all duration-300 text-white rounded-lg hover:bg-gray_500"
                 >
                   {amount}
                 </button>
               ))}
             </div>
-            <button className="w-full bg-orange hover:bg-white hover:text-black mt-4 px-4 py-2 rounded-lg font-bold text-gray-900">
-              Connect Wallet
+            <button className="w-full bg-orange text-black hover:bg-purple hover:text-white transition-all duration-300 mt-4 px-4 py-2 rounded-lg font-bold capitalize">
+              CONNECT WALLET
             </button>
           </div>
 
           {/* Bonding Curve */}
-          <div className="bg-stone-800 border-2 hover:border-yellow hover:bg-stone  border-yellow-500 p-6 rounded-lg shadow-lg sm:hidden">
-            <h3 className="text-lg font-bold mb-4 text-yellow-500">Bonding Curve Progress</h3>
-            <div className="w-full bg-gray-400 h-4 rounded-full overflow-hidden">
+          <div className="bg-stone border-2 border-gray_900 p-6 rounded-lg shadow-lg sm:hidden">
+            <h3 className="text-lg font-bold mb-4 text-yellow-500">
+              Bonding Curve Progress
+            </h3>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm pb-2 ">
+                <span className="capitalize">0.23 %</span>
+                <span>725625.2M BNB left</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray_400 h-4 rounded-full overflow-hidden pb-2">
               <div
-                className="bg-gradient-to-r from-stone via-yellow to-orange h-2"
+                className="bg-gradient-to-r from-stone via-orange to-dark_purple h-4"
                 style={{ width: `${coin.progress}%` }}
               ></div>
             </div>
-            <p className="mt-4 text-sm text-gray-400">
-              Additional description about the bonding curve and its relevance.
-            </p>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm pt-2 ">
+                <span className="capitalize">252 BNB Collected</span>
+                <span>2 BNB left</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Section 2: Graph and Other Details */}
         <div className="md:col-span-3 lg:col-span-2 xl:col-span-2 space-y-4">
           {/* Trading Chart */}
-          <div className="border-2 border-gray hover:border-yellow hover:bg-stone bg-stone rounded-lg shadow-lg">
+          <div className="border-2 border-gray_800 shadow-lg">
             <TradingChart data={chartData} />
           </div>
 
           {/* Transaction Table */}
-          <div className="relative hidden sm:block hover:border-yellow hover:bg-stone  overflow-x-auto shadow-md sm:rounded-lg">
-            <table className="w-full text-sm border border-gray-700 text-left text-gray-400">
-              <thead className="text-xs uppercase bg-gray-700 text-gray-300">
+          <div className="relative hidden sm:block overflow-x-auto shadow-md rounded-lg">
+            <table className="w-full text-sm border-2 border-gray_700 text-left text-gray-400 rounded-lg">
+              <thead className="text-xs uppercase bg-gray_800 text-gray_300">
                 <tr>
-                  {['Time', 'Type', 'USD', 'NICKCAT', 'BNB', 'Address', 'Txs'].map((header) => (
+                  {[
+                    "Time",
+                    "Type",
+                    "USD",
+                    "NICKCAT",
+                    "BNB",
+                    "Address",
+                    "Txs",
+                  ].map((header) => (
                     <th key={header} scope="col" className="px-6 py-3">
                       {header}
                     </th>
@@ -738,7 +794,52 @@ const CoinDetailsSection = () => {
               </thead>
               <tbody>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
+                    1 day ago
+                  </th>
+                  <td className="px-6 py-4">sell</td>
+                  <td className="px-6 py-4">927.25</td>
+                  <td className="px-6 py-4">74.7M</td>
+                  <td className="px-6 py-4">1.23</td>
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4">share</td>
+                </tr>
+                <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -755,60 +856,159 @@ const CoinDetailsSection = () => {
 
         {/* Section 3: Holder Distribution and Comments */}
         <div className="space-y-4 md:col-span-3 lg:col-span-3 xl:col-span-1">
-          {/* Buy/Sell Box */}
-          <div className="hidden sm:block bg-gray-700 hover:border-yellow hover:bg-stone border-2 border-yellow-500 p-6 rounded-lg shadow-lg">
-            <div className="flex justify-between">
-              <button className="bg-yellow-500 px-4 py-2 rounded-lg font-bold text-gray-900">
-                Buy
+          {/* Bonding Curve */}
+
+          <div className="hidden sm:block bg-black hover:border-gray_900 hover:bg-stone transition-all duration-300 border-2 p-6 rounded-lg shadow-lg ">
+            <h3 className="text-lg font-bold mb-4 text-yellow-500">
+              Bonding Curve Progress
+            </h3>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm pb-2 ">
+                <span className="capitalize">0.23 %</span>
+                <span>725625.2M BNB left</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray_400 h-4 rounded-full overflow-hidden pb-2">
+              <div
+                className="bg-gradient-to-r from-stone via-orange to-dark_purple h-4"
+                style={{ width: `${coin.progress}%` }}
+              ></div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm pt-2 ">
+                <span className="capitalize">252 BNB Collected</span>
+                <span>2 BNB left</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden sm:block bg-black transition-all duration-300 shadow-lg ">
+            {/* <div className="flex justify-between">
+              <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-lg font-bold text-black hover:bg-purple hover:text-white">
+                BUY
               </button>
-              <button className="bg-gray-400 px-4 py-2 rounded-lg font-bold text-gray-900">
-                Sell
+              <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-lg font-bold text-black hover:bg-purple hover:text-white">
+                SELL
+              </button>
+             
+            </div> */}
+            <div className="flex w-full gap-2 pb-3 justify-between text-center"> 
+              <div className=" w-1/2 border broder-gray hover:bg-purple hover:text-white hover:border-purple rounded-lg p-2">
+                <h3 className="text-lg font-bold">Price</h3>
+                <p className="text-sm font-bold text-gray_400">1.111581 BNB</p>
+              </div>
+              <div className="w-1/2 border broder-gray hover:bg-purple hover:text-white hover:border-purple rounded-lg p-2">
+                <h3 className="text-lg font-bold">Market Cap</h3>
+                <p className="text-sm font-bold text-gray_400">$ 5262</p>
+              </div>
+            </div>
+            <div className=" w-full flex gap-2 justify-between text-center">
+              <div className="w-1/2 border broder-gray hover:bg-purple hover:text-white hover:border-purple rounded-lg p-2">
+                <h3 className="text-lg font-bold">Virtual Liquidity</h3>
+                <p className="text-sm font-bold text-gray_400">$ 1 </p>
+              </div>
+              <div className="w-1/2 border broder-gray hover:bg-purple hover:text-white hover:border-purple rounded-lg p-2">
+                <h3 className="text-lg font-bold">24h Volume </h3>
+                <p className="text-sm font-bold text-gray_400">$ 0</p>
+              </div>
+            </div>
+            
+          </div>
+
+          {/* Buy/Sell Box */}
+          <div className="hidden sm:block bg-black hover:border-gray_900 hover:bg-stone transition-all duration-300 border-2 p-6 rounded-lg shadow-lg">
+            <div className="flex justify-between">
+              <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-lg font-bold text-black hover:bg-purple hover:text-white">
+                BUY
+              </button>
+              <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-lg font-bold text-black hover:bg-purple hover:text-white">
+                SELL
               </button>
             </div>
             <div className="mt-4">
-              <h3 className="text-lg font-bold text-yellow-500">Enter the Amount</h3>
+              <h3 className="text-lg font-bold text-yellow-500">
+                Enter the Amount
+              </h3>
               <div className="flex items-center mt-2 space-x-2">
                 <input
                   type="number"
-                  className="bg-stone-800 text-gray-300 px-4 py-2 w-full rounded-lg focus:outline-none"
+                  className="bg-stone-800 text-black px-4 py-2 w-full rounded-lg focus:outline-none"
                   placeholder="0.00"
                 />
-                <span className="text-lg font-bold text-yellow-500">{coin.symbol}</span>
+                <span className="text-lg font-bold text-yellow-500">
+                  {coin.symbol}
+                </span>
               </div>
             </div>
             <div className="mt-4 space-x-2">
               {[100, 500, 1000, 10000].map((amount) => (
                 <button
                   key={amount}
-                  className="px-4 py-2 bg-gray-400 text-gray-900 rounded-lg hover:bg-gray-500"
+                  className="px-4 py-2 bg-gray_700 transition-all duration-300 text-white rounded-lg hover:bg-gray_500"
                 >
                   {amount}
                 </button>
               ))}
             </div>
-            <button className="w-full bg-yellow-500 mt-4 px-4 py-2 rounded-lg font-bold text-gray-900">
-              Connect Wallet
+            <button className="w-full bg-orange text-black hover:bg-purple hover:text-white transition-all duration-300 mt-4 px-4 py-2 rounded-lg font-bold capitalize">
+              CONNECT WALLET
             </button>
           </div>
 
           {/* Holder Distribution */}
-          <div className="bg-stone-800 hover:border-yellow hover:bg-stone  border-2 border-yellow-500 p-6 rounded-lg shadow-lg">
-            <h3 className="text-lg font-bold mb-4 text-yellow-500">Holder Distribution</h3>
-            <div className="space-y-2">
+          <div className="bg-black transition-all duration-300 hover:border-gray_900 hover:bg-stone  border-2 border-yellow-500 rounded-lg shadow-lg">
+            <table className="w-full text-sm pb-3 rounded-lg text-left text-gray-400">
+              <thead className="text-xs uppercase  bg-gray_800 text-gray_300 ">
+                <tr>
+                  <th scope="col" className="px-6 py-3 ">
+                    Holder
+                  </th>
+                  <th scope="col" className="px-6 py-3 text-right">
+                    Percentage %
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="">
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4 text-right">94 %</td>
+                </tr>
+                <tr className="">
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4 text-right">94 %</td>
+                </tr>
+                <tr className="">
+                  <td className="px-6 py-4">$0xbe...c74</td>
+                  <td className="px-6 py-4 text-right">94 %</td>
+                </tr>
+              </tbody>
+            </table>
+            {/* <div className="space-y-2">
               {Object.entries(coin.holderDistribution).map(([key, value]) => (
-                <div key={key} className="flex justify-between text-sm border-b pb-2 text-gray-400">
+                <div
+                  key={key}
+                  className="flex justify-between text-sm border-b pb-2 text-gray-400"
+                >
                   <span className="capitalize">{key}</span>
                   <span>{value}</span>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
-          <div className="relative block sm:hidden md:hidden overflow-x-auto shadow-md sm:rounded-lg">
-            <table className="w-full text-sm border border-gray-700 text-left text-gray-400">
-              <thead className="text-xs uppercase bg-gray-700 text-gray-300">
+          <div className="relative block sm:hidden md:hidden overflow-x-auto shadow-md rounded-lg">
+            <table className="w-full text-sm border  border-gray_700 text-left text-gray-400">
+              <thead className="text-xs uppercase bg-gray_800 text-gray_300">
                 <tr>
-                  {['Time', 'Type', 'USD', 'NICKCAT', 'BNB', 'Address', 'Txs'].map((header) => (
+                  {[
+                    "Time",
+                    "Type",
+                    "USD",
+                    "NICKCAT",
+                    "BNB",
+                    "Address",
+                    "Txs",
+                  ].map((header) => (
                     <th key={header} scope="col" className="px-6 py-3">
                       {header}
                     </th>
@@ -817,7 +1017,10 @@ const CoinDetailsSection = () => {
               </thead>
               <tbody>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -828,7 +1031,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -839,7 +1045,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -850,7 +1059,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -861,7 +1073,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -872,7 +1087,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -883,7 +1101,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -894,7 +1115,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -905,7 +1129,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -916,7 +1143,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -927,7 +1157,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -938,7 +1171,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -949,7 +1185,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -960,7 +1199,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -971,7 +1213,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -982,7 +1227,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -993,7 +1241,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>
@@ -1004,7 +1255,10 @@ const CoinDetailsSection = () => {
                   <td className="px-6 py-4">share</td>
                 </tr>
                 <tr className="bg-stone-900 border-b border-gray-700 hover:bg-stone-800">
-                  <th scope="row" className="px-6 py-4 font-medium text-gray-300 whitespace-nowrap">
+                  <th
+                    scope="row"
+                    className="px-6 py-4 font-medium text-gray_300 whitespace-nowrap"
+                  >
                     1 day ago
                   </th>
                   <td className="px-6 py-4">sell</td>

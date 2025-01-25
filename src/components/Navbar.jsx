@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className=" bg-black text-white">
+    <nav className="bg-Pitch_black  text-white">
       <header className="flex justify-between items-center px-6 py-2">
         {/* Logo */}
         <Link to="/" className="font-poppins italic flex items-center">
@@ -19,28 +19,28 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-8 items-center font-poppins text-xl">
-          <Link to="/" className="hover:text-orange underline">
+        <div className="hidden md:flex space-x-8 items-center font-poppins text-2xl transition-all duration-300 ">
+          <Link to="/" className="hover:text-orange underline transition-all duration-300">
             Home
           </Link>
-          <Link to="/ranking" className="hover:text-orange underline">
+          <Link to="/ranking" className="hover:text-orange underline transition-all duration-300">
             Ranking
           </Link>
-          <Link to="/docs" className="hover:text-orange underline">
+          {/* <Link to="/docs" className="hover:text-orange underline transition-all duration-300">
             Docs
-          </Link>
+          </Link> */}
         </div>
 
         {/* Social Icons and Buttons */}
         <div className="hidden md:flex space-x-4 items-center">
-          <FaXTwitter className="border border-orange hover:bg-orange rounded-lg hover:text-black text-white w-12 h-12 p-2" />
-          <FaTelegram className="border border-orange hover:bg-orange rounded-lg hover:text-black text-white w-12 h-12 p-2" />
+          <FaXTwitter className="border border-orange hover:bg-purple transition-all duration-300 rounded-lg hover:text-white hover:border-purple text-white w-12 h-12 p-2" />
+          <FaTelegram className="border border-orange hover:bg-purple transition-all duration-300 rounded-lg hover:text-white hover:border-purple text-white w-12 h-12 p-2" />
           <Link to="/launch">
-            <button className="px-6 py-3 rounded-lg font-bold font-poppins bg-transparent border border-orange hover:bg-orange hover:text-black">
+            <button className="px-6 py-3 rounded-lg font-bold font-poppins bg-transparent border border-orange hover:bg-orange hover:text-white transition-all duration-300">
               Launch Token
             </button>
           </Link>
-          <button className="px-6 py-3 rounded-lg font-bold font-poppins bg-orange hover:bg-white hover:text-black">
+          <button className="px-6 py-3 rounded-lg font-bold font-poppins bg-orange hover:bg-purple hover:text-white transition-all duration-300">
             CONNECT WALLET
           </button>
         </div>
