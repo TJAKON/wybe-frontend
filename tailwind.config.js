@@ -41,6 +41,7 @@ module.exports = {
         gray_700: "#374151", // Dark gray for buttons or containers
         gray_800: "#1F2937", // Very dark gray for card backgrounds
         gray_900: "#111827", // Darkest gray for section backgrounds
+        gray_1000: "#171717", // Darkest gray for section backgrounds
         purple_hover: "#6C4BAF", // Slightly darker shade of purple for hover
         orange_hover: "#FF6A1D", // Slightly darker shade of orange for hover
       },

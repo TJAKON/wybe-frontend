@@ -21,7 +21,7 @@ const LaunchCard = ({
 
   return (
     <div
-      className=" text-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-5 border border-gray_700 hover:border-yellow hover:bg-stone cursor-pointer"
+      className="bg-gray_1000 text-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 p-5 border-2 border-black hover:border-yellow hover:bg-stone cursor-pointer"
       onClick={handleClick}
     >
       {/* Top Section */}
@@ -29,24 +29,34 @@ const LaunchCard = ({
         <img
           src={image}
           alt={name}
-          className="w-16 h-16 rounded-full border-2 border-yellow"
+          className="w-20 h-20 rounded-xl"
         />
         <div>
-          <h3 className="text-lg font-bold">
-            {name} <span className="text-sm text-gray_400">({symbol})</span>
+          <h3 className="flex text-lg justify-between font-bold">
+            <span>
+              {name} <span className="text-sm text-gray_400">({symbol})</span>
+            </span>
+            {/* <span className="text-sm text-gray_400 border border-yellow mb-0 ">Classic bonding curve</span> */}
           </h3>
-          <p className="text-sm text-gray_400">Created by: {creator}</p>
+          {/* <p className="text-sm text-gray_400">Created by: {creator}</p> */}
+          <p className="text-sm text-gray_300 line-clamp-3">{description}</p>
         </div>
       </div>
 
       {/* Description */}
-      <p className="mt-4 text-sm text-gray_300 line-clamp-3">{description}</p>
 
       {/* Progress Bar */}
-      <div className="mt-4">
+      <div className="mt-4 font-jetbrains">
         <div className="flex justify-between text-sm text-gray_400 mb-1">
-          <span>Market Cap: {marketCap}</span>
-          <span>{progress}%</span>
+          <div className="flex gap-3">
+            <span>{progress}%</span>
+            <span>MC ${marketCap}</span>
+          </div>
+          <div className="flex gap-3">
+            <span>{1} day</span>
+            <span>18 tsx</span>
+            <span>$ {18} vol</span>
+          </div>
         </div>
         <div className="relative bg-gray_700 h-2 rounded-full">
           <div
@@ -57,7 +67,7 @@ const LaunchCard = ({
       </div>
 
       {/* Additional Info */}
-      <div className="mt-4 text-sm">
+      {/* <div className=" flex justify-between text-sm">
         <p>
           <strong>Price:</strong> {price}
         </p>
@@ -66,7 +76,7 @@ const LaunchCard = ({
           <strong>Investors:</strong> {holderDistribution.investors} |{" "}
           <strong>Retail:</strong> {holderDistribution.retail}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

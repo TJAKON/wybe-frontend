@@ -16,8 +16,8 @@ const Footer = () => {
 
           {/* Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold">Explore</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold text-xl">Explore</h3>
+            <ul className="space-y-2 text-sm font-jetbrains">
               <li>My Tokens</li>
               <li>Rewards</li>
               <li>Referrals</li>
@@ -28,8 +28,8 @@ const Footer = () => {
 
           {/* Social Media */}
           <div className="space-y-4">
-            <h3 className="font-semibold">Follow Us</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-semibold text-xl">Follow Us</h3>
+            <ul className="space-y-2 text-sm font-jetbrains">
               <li>Twitter</li>
               <li>Telegram</li>
               <li>YouTube</li>
@@ -38,7 +38,7 @@ const Footer = () => {
 
           {/* Subscribe */}
           <div className="space-y-4">
-            <h3 className="font-semibold">Subscribe to Notifications</h3>
+            <h3 className="font-semibold text-xl">Subscribe to Notifications</h3>
             <input
               type="email"
               placeholder="Enter your email"
@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
 
         {/* Disclaimer */}
-        <div className="text-center text-sm mb-4">
+        <div className="text-center text-sm mb-4 font-jetbrains">
           <p>
             <strong>Copyright Information & disclaimers:</strong> “Disclaimer:
             Digital assets are highly speculative and involve significant risk
@@ -70,8 +70,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright Info */}
-        <div className="text-center text-sm">
-          <p>© 2025 [Your Brand]. All rights reserved</p>
+        <div className="text-center text-sm font-jetbrains">
+          <p>© 2025 WybeFun. All rights reserved</p>
           <p>
             Willisdens Group LP | Address: 71-75 Shelton Street, Covent Garden,
             London, WC2H 9JQ

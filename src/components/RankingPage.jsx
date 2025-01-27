@@ -7,10 +7,10 @@ const RankingPage = () => {
     <div className="min-h-screen text-off_white ">
       {/* Page Title */}
       <section className="text-center py-8">
-        <h2 className="text-4xl font-bold text-orange">
-          <span className="capitalize">WYBE</span> RANKING
+        <h2 className="flex w-full justify-center items-center text-center gap-2 text-4xl font-bold text-orange">
+        <img src="/wybe.svg" className="w-16 h-16" alt="Wybe Logo" />RANKING
         </h2>
-        <p className="text-sm text-gray-400 mt-2">
+        <p className="text-sm text-gray-400 mt-2 font-jetbrains">
           THE DATA WAS LAST UPDATED AT 0000/00/00 00:00:00 (UTC+5:30)
         </p>
       </section>
@@ -18,7 +18,7 @@ const RankingPage = () => {
       {/* Ranking Tables */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 lg:px-16 py-8 font-jetbrains">
         {/* Launching Soon */}
-        <div className="bg-gray_900 p-6 rounded-lg shadow-lg">
+        <div className="bg-gray_1000 p-6 rounded-lg shadow-lg">
           <h3 className="text-lg font-bold mb-4 text-light_purple">
             LAUNCHING SOON!
           </h3>
@@ -54,7 +54,7 @@ const RankingPage = () => {
         </div>
 
         {/* Market Cap Ranking */}
-        <div className="bg-gray_900 p-6 rounded-lg shadow-lg">
+        <div className="bg-gray_1000 p-6 rounded-lg shadow-lg">
           <h3 className="text-lg font-bold mb-4 text-light_green">
             MARKET CAP RANKING
           </h3>
@@ -81,7 +81,7 @@ const RankingPage = () => {
         </div>
 
         {/* 24HR Price Increase */}
-        <div className="bg-gray_900 p-6 rounded-lg shadow-lg">
+        <div className="bg-gray_1000 p-6 rounded-lg shadow-lg">
           <h3 className="text-lg font-bold mb-4 text-dark_orange">
             24HR PRICE INCREASE
           </h3>
@@ -110,7 +110,7 @@ const RankingPage = () => {
         </div>
 
         {/* 24HR Trading Volume */}
-        <div className="bg-gray_900 p-6 rounded-lg shadow-lg">
+        <div className="bg-gray_1000 p-6 rounded-lg shadow-lg">
           <h3 className="text-lg font-bold mb-4 text-dark_pink">
             24HR TRADING VOLUME (TRX)
           </h3>

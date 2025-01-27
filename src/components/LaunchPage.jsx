@@ -5,10 +5,12 @@ const LaunchPage = () => {
     <div className="text-white">
       {/* Hero Section */}
       <section className="text-center py-16 bg-gradient-to-r from-black to-stone">
-        <h2 className="text-3xl sm:text-4xl font-extrabold capitalize leading-tight">
-          LAUNCH YOUR TOKEN ON <span className="text-orange">WYBE</span>
+        <h2 className="flex justify-center gap-4 items-center w-full text-3xl text-center sm:text-4xl font-extrabold  capitalize leading-tight">
+          LAUNCH YOUR TOKEN ON{" "}
+          
+            <img src="/wybe.svg" className="w-16 h-16" alt="Wybe Logo" />
         </h2>
-        <p className="mt-4 text-gray_400 text-base sm:text-lg">
+        <p className="mt-4 text-gray_400 text-base sm:text-lg font-jetbrains">
           The fastest and most cost-effective way to launch your token.
         </p>
         <div className="flex flex-wrap justify-center gap-8 mt-12">
@@ -18,7 +20,7 @@ const LaunchPage = () => {
               alt="No Presale"
               className="mx-auto w-20 h-20"
             />
-            <p className="mt-4 text-gray_300 text-sm sm:text-base font-medium">
+            <p className="mt-4 text-gray_300 text-sm sm:text-base font-medium font-jetbrains">
               NO PRESALE
             </p>
           </div>
@@ -28,7 +30,7 @@ const LaunchPage = () => {
               alt="No Team Allocation"
               className="mx-auto w-20 h-20"
             />
-            <p className="mt-4 text-gray_300 text-sm sm:text-base font-medium">
+            <p className="mt-4 text-gray_300 text-sm sm:text-base font-medium font-jetbrains">
               NO TEAM ALLOCATION
             </p>
           </div>
@@ -38,7 +40,7 @@ const LaunchPage = () => {
               alt="Lower Gas"
               className="mx-auto w-20 h-20"
             />
-            <p className="mt-4 text-gray_300 text-sm sm:text-base font-medium">
+            <p className="mt-4 text-gray_300 text-sm sm:text-base font-medium font-jetbrains">
               LOWER GAS
             </p>
           </div>
