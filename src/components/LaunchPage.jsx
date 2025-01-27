@@ -49,7 +49,7 @@ const LaunchPage = () => {
 
       {/* Token Form Section */}
       <section className=" bg-black mx-auto max-w-4xl w-full p-6  mb-5 sm:p-12 rounded-lg shadow-2xl mt-8">
-        <form className="space-y-8">
+        <form className="space-y-8 font-jetbrains">
           {/* Image Upload */}
           <div className="flex flex-col items-center sm:flex-row sm:items-start sm:space-x-6">
             <label className="flex flex-col items-center w-40 p-4 border-2 border-dashed rounded-lg cursor-pointer hover:bg-gray_700 transition-all">

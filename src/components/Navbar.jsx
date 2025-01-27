@@ -26,9 +26,12 @@ const Navbar = () => {
           <Link to="/ranking" className="hover:text-orange underline transition-all duration-300">
             Ranking
           </Link>
-          {/* <Link to="/docs" className="hover:text-orange underline transition-all duration-300">
+          <Link className="hover:text-orange underline transition-all duration-300">
             Docs
-          </Link> */}
+          </Link>
+          <Link className="hover:text-orange underline transition-all duration-300">
+          About
+          </Link>
         </div>
 
         {/* Social Icons and Buttons */}
