@@ -48,14 +48,14 @@ const LaunchCard = ({
       {/* Progress Bar */}
       <div className="mt-4 font-jetbrains">
         <div className="flex justify-between text-sm text-gray_400 mb-1">
-          <div className="flex gap-3">
+          <div className="flex gap-2">
             <span>{progress}%</span>
             <span>MC ${marketCap}</span>
           </div>
-          <div className="flex gap-3">
+          <div className="flex gap-2">
             <span>{1} day</span>
             <span>18 tsx</span>
-            <span>$ {18} vol</span>
+            <span>${18} vol</span>
           </div>
         </div>
         <div className="relative bg-gray_700 h-2 rounded-full">

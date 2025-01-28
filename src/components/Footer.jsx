@@ -15,7 +15,7 @@ const Footer = () => {
           </div>
 
           {/* Links */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <h3 className="font-semibold text-xl">Explore</h3>
             <ul className="space-y-2 text-sm font-jetbrains">
               <li>My Tokens</li>
@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
 
           {/* Social Media */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <h3 className="font-semibold text-xl">Follow Us</h3>
             <ul className="space-y-2 text-sm font-jetbrains">
               <li>Twitter</li>
@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
 
           {/* Subscribe */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center md:text-left">
             <h3 className="font-semibold text-xl">Subscribe to Notifications</h3>
             <input
               type="email"

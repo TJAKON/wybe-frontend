@@ -9,15 +9,15 @@ const TradingChart = ({ data }) => {
     // Create the chart
     const chart = createChart(chartContainerRef.current, {
       layout: {
-        background: { color: "#000" }, // Dark background
+        background: { color: "#171717" }, // Dark background
         textColor: "#ffffff", // White text
       },
       grid: {
         vertLines: {
-          color: "#444", // Grid color
+          color: "#424242", // Grid color
         },
         horzLines: {
-          color: "#444", // Grid color
+          color: "#424242", // Grid color
         },
       },
       timeScale: {

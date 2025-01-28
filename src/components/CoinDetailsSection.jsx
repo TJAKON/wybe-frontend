@@ -644,12 +644,12 @@ const CoinDetailsSection = () => {
         {/* Section 1: Coin Details */}
         <div className="space-y-4 md:col-span-3 lg:col-span-1 xl:col-span-1">
           {/* Coin Information */}
-          <div className="hidden sm:block bg-black hover:border-gray_900 transition-all duration-300 hover:bg-stone  border-2 border-yellow-500 p-6 rounded-2xl shadow-lg">
+          <div className="hidden sm:block bg-black hover:border-gray_900 transition-all duration-300 hover:bg-stone  border border-yellow-500 p-6 rounded-2xl shadow-lg">
             <div className="flex items-center space-x-4">
               <img
                 src={coin.image}
                 alt={coin.name}
-                className="w-16 h-16 rounded-full border-2"
+                className="w-16 h-16 rounded-full border"
               />
               <div>
                 <h2 className="text-lg font-bold text-yellow-500">
@@ -660,17 +660,19 @@ const CoinDetailsSection = () => {
                 </h3>
               </div>
             </div>
-            <p className="mt-4 text-gray-400 font-jetbrains">{coin.description}</p>
+            <p className="mt-4 text-gray-400 font-jetbrains">
+              {coin.description}
+            </p>
             <p className="mt-2 font-bold text-yellow-500 font-jetbrains">
               Contract: {coin.contractAddress}
             </p>
           </div>
-          <div className="block sm:hidden bg-stone border-gray_900 transition-all duration-300   border-2  p-6 rounded-2xl shadow-lg">
+          <div className="block sm:hidden bg-stone border-gray_900 transition-all duration-300   border  p-6 rounded-2xl shadow-lg">
             <div className="flex items-center space-x-4">
               <img
                 src={coin.image}
                 alt={coin.name}
-                className="w-16 h-16 rounded-full border-2"
+                className="w-16 h-16 rounded-full border"
               />
               <div>
                 <h2 className="text-lg font-bold text-yellow-500 ">
@@ -681,14 +683,16 @@ const CoinDetailsSection = () => {
                 </h3>
               </div>
             </div>
-            <p className="mt-4 text-gray-400 font-jetbrains">{coin.description}</p>
+            <p className="mt-4 text-gray-400 font-jetbrains">
+              {coin.description}
+            </p>
             <p className="mt-2 font-bold text-yellow-500 font-jetbrains">
               Contract: {coin.contractAddress}
             </p>
           </div>
 
           {/* Coin Visual */}
-          <div className="hidden sm:block bg-black hover:border-gray_900 transition-all duration-300 hover:bg-stone border-2 border-gray-700 p-6 rounded-2xl shadow-lg">
+          <div className="hidden sm:block bg-black hover:border-gray_900 transition-all duration-300 hover:bg-stone border border-gray-700 p-6 rounded-2xl shadow-lg">
             <h2 className="text-lg font-bold mb-4 text-yellow-500 font-jetbrains">
               {coin.name}
             </h2>
@@ -699,8 +703,66 @@ const CoinDetailsSection = () => {
             />
           </div>
 
+          <div className="sm:hidden transition-all duration-300 shadow-lg ">
+            <div className="flex w-full gap-2 pb-3 justify-between text-center ">
+              <div className=" w-1/2 bg-stone rounded-2xl p-2">
+                <h3 className="text-lg font-bold">Price</h3>
+                <p className="text-sm font-bold text-gray_400 font-jetbrains">
+                  1.111581 BNB
+                </p>
+              </div>
+              <div className="w-1/2 bg-stone  rounded-2xl p-2">
+                <h3 className="text-lg font-bold">Market Cap</h3>
+                <p className="text-sm font-bold text-gray_400 font-jetbrains">
+                  $ 5262
+                </p>
+              </div>
+            </div>
+            <div className=" w-full flex gap-2 justify-between text-center">
+              <div className="w-1/2 bg-stone  rounded-2xl p-2">
+                <h3 className="text-lg font-bold">Virtual Liquidity</h3>
+                <p className="text-sm font-bold text-gray_400 font-jetbrains">
+                  $ 1{" "}
+                </p>
+              </div>
+              <div className="w-1/2 bg-stone rounded-2xl p-2">
+                <h3 className="text-lg font-bold">24h Volume </h3>
+                <p className="text-sm font-bold text-gray_400 font-jetbrains">
+                  $ 0
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bonding Curve */}
+          <div className="bg-stone border border-gray_900 p-6 rounded-2xl shadow-lg sm:hidden">
+            <h3 className="text-lg font-bold mb-4 text-yellow-500">
+              Bonding Curve Progress
+            </h3>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm pb-2 font-jetbrains ">
+                <span className="capitalize font-jetbrains">0.23 %</span>
+                <span className="font-jetbrains">725625.2M BNB left</span>
+              </div>
+            </div>
+            <div className="w-full bg-gray_400 h-4 rounded-full overflow-hidden pb-2">
+              <div
+                className="bg-gradient-to-r from-stone via-orange to-dark_purple h-4"
+                style={{ width: `${coin.progress}%` }}
+              ></div>
+            </div>
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm pt-2 font-jetbrains">
+                <span className="capitalize font-jetbrains">
+                  252 BNB Collected
+                </span>
+                <span className="font-jetbrains">2 BNB left</span>
+              </div>
+            </div>
+          </div>
+
           {/* Buy/Sell Box (Visible on small screens) */}
-          <div className="bg-stone  border-2 border-gray_900 hover:bg-stone  border-yellow-500 p-6 rounded-2xl shadow-lg sm:hidden">
+          <div className="bg-stone  border border-gray_900 hover:bg-stone  border-yellow-500 p-6 rounded-2xl shadow-lg sm:hidden">
             <div className="flex justify-between">
               <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-2xl font-bold text-black hover:bg-purple hover:text-white">
                 BUY
@@ -725,7 +787,7 @@ const CoinDetailsSection = () => {
               </div>
             </div>
             <div className="mt-4 space-x-2">
-              {[100, 500, 1000, 10000].map((amount) => (
+              {[100, 500, 1000].map((amount) => (
                 <button
                   key={amount}
                   className="px-4 py-2 bg-gray_700 transition-all duration-300 text-white rounded-2xl hover:bg-gray_500"
@@ -738,44 +800,19 @@ const CoinDetailsSection = () => {
               CONNECT WALLET
             </button>
           </div>
-
-          {/* Bonding Curve */}
-          <div className="bg-stone border-2 border-gray_900 p-6 rounded-2xl shadow-lg sm:hidden">
-            <h3 className="text-lg font-bold mb-4 text-yellow-500">
-              Bonding Curve Progress
-            </h3>
-            <div className="space-y-2">
-              <div className="flex justify-between text-sm pb-2 font-jetbrains ">
-                <span className="capitalize font-jetbrains">0.23 %</span>
-                <span className="font-jetbrains">725625.2M BNB left</span>
-              </div>
-            </div>
-            <div className="w-full bg-gray_400 h-4 rounded-full overflow-hidden pb-2">
-              <div
-                className="bg-gradient-to-r from-stone via-orange to-dark_purple h-4"
-                style={{ width: `${coin.progress}%` }}
-              ></div>
-            </div>
-            <div className="space-y-2">
-              <div className="flex justify-between text-sm pt-2 font-jetbrains">
-                <span className="capitalize font-jetbrains">252 BNB Collected</span>
-                <span className="font-jetbrains">2 BNB left</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Section 2: Graph and Other Details */}
         <div className="md:col-span-3 lg:col-span-2 xl:col-span-2 space-y-4">
           {/* Trading Chart */}
-          <div className="border-2 border-gray_800 shadow-lg overflow-hidden">
+          <div className="border border-white shadow-lg overflow-hidden rounded-2xl">
             <TradingChart data={chartData} />
           </div>
 
           {/* Transaction Table */}
-          <div className="relative hidden sm:block overflow-x-auto shadow-md">
-            <table className="w-full text-sm border-2 border-gray_700 text-left text-gray-400 rounded-2xl">
-              <thead className="text-xs uppercase bg-gray_800 text-gray_300">
+          <div className="relative hidden sm:block overflow-x-auto border border-white shadow-md rounded-2xl">
+            <table className="w-full text-sm text-left text-gray-400 ">
+              <thead className="text-xs uppercase bg-gray_1000 text-white">
                 <tr>
                   {[
                     "Time",
@@ -858,7 +895,7 @@ const CoinDetailsSection = () => {
         <div className="space-y-4 md:col-span-3 lg:col-span-3 xl:col-span-1">
           {/* Bonding Curve */}
 
-          <div className="hidden sm:block bg-black hover:border-gray_900 hover:bg-stone transition-all duration-300 border-2 p-6 rounded-2xl shadow-lg ">
+          <div className="hidden sm:block bg-black hover:border-gray_900 hover:bg-stone transition-all duration-300 border p-6 rounded-2xl shadow-lg ">
             <h3 className="text-lg font-bold mb-4 text-yellow-500">
               Bonding Curve Progress
             </h3>
@@ -882,7 +919,7 @@ const CoinDetailsSection = () => {
             </div>
           </div>
 
-          <div className="hidden sm:block bg-black transition-all duration-300 shadow-lg ">
+          <div className="hidden sm:block transition-all duration-300 shadow-lg ">
             {/* <div className="flex justify-between">
               <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-2xl font-bold text-black hover:bg-purple hover:text-white">
                 BUY
@@ -892,31 +929,38 @@ const CoinDetailsSection = () => {
               </button>
              
             </div> */}
-            <div className="flex w-full gap-2 pb-3 justify-between text-center "> 
+            <div className="flex w-full gap-2 pb-3 justify-between text-center ">
               <div className=" w-1/2 border broder-gray hover:bg-purple hover:text-white hover:border-purple rounded-2xl p-2">
                 <h3 className="text-lg font-bold">Price</h3>
-                <p className="text-sm font-bold text-gray_400 font-jetbrains">1.111581 BNB</p>
+                <p className="text-sm font-bold text-gray_400 font-jetbrains">
+                  1.111581 BNB
+                </p>
               </div>
               <div className="w-1/2 border broder-gray hover:bg-purple hover:text-white hover:border-purple rounded-2xl p-2">
                 <h3 className="text-lg font-bold">Market Cap</h3>
-                <p className="text-sm font-bold text-gray_400 font-jetbrains">$ 5262</p>
+                <p className="text-sm font-bold text-gray_400 font-jetbrains">
+                  $ 5262
+                </p>
               </div>
             </div>
             <div className=" w-full flex gap-2 justify-between text-center">
               <div className="w-1/2 border broder-gray hover:bg-purple hover:text-white hover:border-purple rounded-2xl p-2">
                 <h3 className="text-lg font-bold">Virtual Liquidity</h3>
-                <p className="text-sm font-bold text-gray_400 font-jetbrains">$ 1 </p>
+                <p className="text-sm font-bold text-gray_400 font-jetbrains">
+                  $ 1{" "}
+                </p>
               </div>
               <div className="w-1/2 border broder-gray hover:bg-purple hover:text-white hover:border-purple rounded-2xl p-2">
                 <h3 className="text-lg font-bold">24h Volume </h3>
-                <p className="text-sm font-bold text-gray_400 font-jetbrains">$ 0</p>
+                <p className="text-sm font-bold text-gray_400 font-jetbrains">
+                  $ 0
+                </p>
               </div>
             </div>
-            
           </div>
 
           {/* Buy/Sell Box */}
-          <div className="hidden sm:block bg-black hover:border-gray_900 hover:bg-stone transition-all duration-300 border-2 p-6 rounded-2xl shadow-lg">
+          <div className="hidden sm:block bg-black hover:border-gray_900 hover:bg-stone transition-all duration-300 border p-6 rounded-2xl shadow-lg">
             <div className="flex justify-between">
               <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-2xl font-bold text-black hover:bg-purple hover:text-white">
                 BUY
@@ -941,7 +985,7 @@ const CoinDetailsSection = () => {
               </div>
             </div>
             <div className="mt-4 space-x-2">
-              {[100, 500, 1000, 10000].map((amount) => (
+              {[100, 500, 1000].map((amount) => (
                 <button
                   key={amount}
                   className="px-4 py-2 bg-gray_700 transition-all duration-300 text-white rounded-2xl hover:bg-gray_500"
@@ -956,9 +1000,9 @@ const CoinDetailsSection = () => {
           </div>
 
           {/* Holder Distribution */}
-          <div className="bg-black transition-all overflow-hidden duration-300 hover:border-gray_900 hover:bg-stone  border-2 border-yellow-500 rounded-2xl shadow-lg">
+          <div className="bg-black transition-all overflow-hidden duration-300  border rounded-2xl shadow-lg">
             <table className="w-full text-sm pb-3 rounded-2xl text-left text-gray-400">
-              <thead className="text-xs uppercase  bg-gray_800 text-gray_300 ">
+              <thead className="text-xs uppercase  bg-gray_1000 text-white ">
                 <tr>
                   <th scope="col" className="px-6 py-3 ">
                     Holder
@@ -969,15 +1013,15 @@ const CoinDetailsSection = () => {
                 </tr>
               </thead>
               <tbody className="font-jetbrains">
-                <tr className="">
+                <tr className="border-b">
                   <td className="px-6 py-4">$0xbe...c74</td>
                   <td className="px-6 py-4 text-right">94 %</td>
                 </tr>
-                <tr className="">
+                <tr className="border-b">
                   <td className="px-6 py-4">$0xbe...c74</td>
                   <td className="px-6 py-4 text-right">94 %</td>
                 </tr>
-                <tr className="">
+                <tr className="border-b">
                   <td className="px-6 py-4">$0xbe...c74</td>
                   <td className="px-6 py-4 text-right">94 %</td>
                 </tr>
@@ -996,9 +1040,9 @@ const CoinDetailsSection = () => {
             </div> */}
           </div>
 
-          <div className="relative block sm:hidden md:hidden overflow-x-auto shadow-md rounded-2xl">
-            <table className="w-full text-sm border  border-gray_700 text-left text-gray-400">
-              <thead className="text-xs uppercase bg-gray_800 text-gray_300">
+          <div className="relative block sm:hidden md:hidden overflow-x-auto border border-white shadow-md rounded-2xl">
+            <table className="w-full text-sm text-left">
+              <thead className="text-xs uppercase bg-gray_1000 text-white">
                 <tr>
                   {[
                     "Time",

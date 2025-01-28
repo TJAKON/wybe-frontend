@@ -14,24 +14,30 @@ const Navbar = () => {
     <nav className="bg-Pitch_black  text-white">
       <header className="flex justify-between items-center px-6 py-2">
         {/* Logo */}
-        <Link to="/" className="font-poppins italic flex items-center">
-          <img src="/wybe.svg" className="w-20" alt="Wybe Logo" />
-        </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex space-x-8 items-center font-poppins text-2xl transition-all duration-300 ">
-          <Link to="/" className="hover:text-orange underline transition-all duration-300">
+        <div className="hidden md:flex space-x-8 items-center text-left font-poppins text-2xl transition-all duration-300 ">
+          <Link to="/" className="font-poppins italic flex items-center">
+            <img src="/wybe.svg" className="w-20" alt="Wybe Logo" />
+          </Link>
+          <Link
+            to="/"
+            className="hover:text-orange underline transition-all duration-300"
+          >
             Home
           </Link>
-          <Link to="/ranking" className="hover:text-orange underline transition-all duration-300">
+          <Link
+            to="/ranking"
+            className="hover:text-orange underline transition-all duration-300"
+          >
             Ranking
           </Link>
-          <Link className="hover:text-orange underline transition-all duration-300">
+          {/* <Link className="hover:text-orange underline transition-all duration-300">
             Docs
           </Link>
           <Link className="hover:text-orange underline transition-all duration-300">
           About
-          </Link>
+          </Link> */}
         </div>
 
         {/* Social Icons and Buttons */}
@@ -48,6 +54,10 @@ const Navbar = () => {
           </button>
         </div>
 
+        <Link to="/" className=" md:hidden font-poppins italic flex items-center">
+            <img src="/wybe.svg" className="w-20" alt="Wybe Logo" />
+          </Link>
+
         {/* Hamburger Menu for Mobile */}
         <button
           className="md:hidden text-orange focus:outline-none text-3xl"
@@ -59,31 +69,42 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="md:hidden bg-transparent text-white">
-          <div className="flex flex-col items-center space-y-4 py-4 text-xl">
-            <Link to="/" className="hover:text-orange" onClick={toggleMenu}>
-              HOME
-            </Link>
-            <Link to="/ranking" className="hover:text-orange" onClick={toggleMenu}>
-              RANKING
-            </Link>
-            <Link to="/docs" className="hover:text-orange" onClick={toggleMenu}>
-              DOCS
-            </Link>
-            <div className="flex space-x-4">
-              <FaXTwitter className="border border-orange hover:bg-orange rounded-2xl hover:text-black text-white w-10 h-10 p-2" />
-              <FaTelegram className="border border-orange hover:bg-orange rounded-2xl hover:text-black text-white w-10 h-10 p-2" />
-            </div>
-            <Link to="/launch">
-              <button className="px-6 py-3 rounded-2xl font-bold font-poppins bg-transparent border border-orange hover:bg-orange hover:text-black">
-                Launch Token
+        <>
+        
+          <div className="md:hidden bg-transparent text-white">
+            <div className="flex flex-col items-center space-y-4 py-4 text-xl">
+              <Link to="/" className="hover:text-orange" onClick={toggleMenu}>
+                HOME
+              </Link>
+              <Link
+                to="/ranking"
+                className="hover:text-orange"
+                onClick={toggleMenu}
+              >
+                RANKING
+              </Link>
+              <Link
+                to="/docs"
+                className="hover:text-orange"
+                onClick={toggleMenu}
+              >
+                DOCS
+              </Link>
+              <div className="flex space-x-4">
+                <FaXTwitter className="border border-orange hover:bg-orange rounded-2xl hover:text-black text-white w-10 h-10 p-2" />
+                <FaTelegram className="border border-orange hover:bg-orange rounded-2xl hover:text-black text-white w-10 h-10 p-2" />
+              </div>
+              <Link to="/launch">
+                <button className="px-6 py-3 rounded-2xl font-bold font-poppins bg-transparent border border-orange hover:bg-orange hover:text-black">
+                  Launch Token
+                </button>
+              </Link>
+              <button className="px-6 py-3 rounded-2xl font-bold font-poppins bg-orange hover:bg-white hover:text-black">
+                CONNECT WALLET
               </button>
-            </Link>
-            <button className="px-6 py-3 rounded-2xl font-bold font-poppins bg-orange hover:bg-white hover:text-black">
-              CONNECT WALLET
-            </button>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </nav>
   );
