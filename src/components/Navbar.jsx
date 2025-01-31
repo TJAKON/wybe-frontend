@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaRankingStar, FaTelegram, FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose, AiFillThunderbolt } from "react-icons/ai";
 import { PiRocketLaunchDuotone } from "react-icons/pi";
 import { CiCircleQuestion, CiGift, CiSearch } from "react-icons/ci";
 import { LuWallet } from "react-icons/lu";
@@ -41,8 +41,9 @@ const Navbar = () => {
           <FaXTwitter className="border border-white hover:bg-transparent transition-all duration-300 rounded-2xl hover:text-white text-white w-12 h-12 p-2" />
           <FaTelegram className="border text-blue border-white hover:bg-transparent transition-all duration-300 rounded-2xl hover:text-white hover:border-white w-12 h-12 p-2" />
           <Link to="/launch">
-            <button className="px-6 py-3 rounded-2xl text-xl font-bold font-poppins bg-transparent border border-white hover:bg-white hover:text-black transition-all duration-300">
-              Wybe Turbo
+            <button className="flex items-center gap-2 px-6 py-3 rounded-2xl text-xl font-bold font-poppins bg-transparent border border-white hover:bg-white hover:text-black transition-all duration-300">
+             Wybe Turbo  
+             <AiFillThunderbolt className="w-6 h-6" />
             </button>
           </Link>
           <button className="px-6 py-3 rounded-2xl text-xl font-bold font-poppins bg-orange hover:bg-purple hover:text-white transition-all duration-300">
@@ -83,23 +84,22 @@ const Navbar = () => {
             <FaRankingStar className=" w-6 h-6" />
             Ranking
           </Link>
-
           <Link
             to="/launch"
-            className="text-center justify-items-center m-0 items-center justify-center text-[14px]"
-          >
-            <TfiCup className=" w-6 h-6" />
-            Rewards
-          </Link>
-          <Link
-            to="/launch"
-            className="text-center justify-items-center m-0 items-center justify-center text-[14px]"
+            className="text-center text-orange justify-items-center m-0 items-center justify-center text-[14px]"
           >
             <PiRocketLaunchDuotone className=" w-6 h-6" />
             Launch Token
           </Link>
+          <Link
+            to="/launch"
+            className="text-center justify-items-center m-0 items-center justify-center text-[14px]"
+          >
+            <LuWallet className=" w-6 h-6" />
+            My Token
+          </Link>
           <button
-            className="lg:hidden text-orange duration-300 focus:outline-none"
+            className="lg:hidden duration-300 focus:outline-none"
             onClick={toggleMenu}
           >
             {isOpen ? (
@@ -138,17 +138,17 @@ const Navbar = () => {
                       className="p-3 flex gap-3 items-center"
                       onClick={toggleMenu}
                     >
-                      <LuWallet className="w-6 h-6" />
-                      My Token
+                      <AiFillThunderbolt className="w-6 h-6" />
+                      wybe Turbo
                     </Link>
-                    <Link
+                    {/* <Link
                       to="/"
                       className="p-3 flex gap-3 items-center"
                       onClick={toggleMenu}
                     >
                       <CiGift className="w-6 h-6" />
                       Referals
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
                 <div className="p-5">

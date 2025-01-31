@@ -11,7 +11,7 @@ const HeroSection = () => {
   );
 
   return (
-    <div className="text-white mb-5 border-b">
+    <div className="text-white mb-5">
       {/* <div className="flex-1 space-y-6 text-center justify-items-center md:text-left">
         <img
           src="/wybeBanner.jpg"
@@ -73,7 +73,7 @@ const HeroSection = () => {
 
       <div className="flex-1 block sm:hidden w-auto sm:h-[500px] text-center justify-items-center md:text-left">
         <img
-          src="/banner_mobile2.svg"
+          src="/banner_mobile3.svg"
           // src="/wybeBanner.jpg"
           alt="Logo"
           className="w-full h-auto"

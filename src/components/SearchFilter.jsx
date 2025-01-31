@@ -38,7 +38,7 @@ const SearchFilter = () => {
             onClick={() => handleTabChange(tab.toLowerCase())}
             className={`px-4 py-2 rounded-2xl transition duration-300 ${
               activeTab === tab.toLowerCase()
-                ? "bg-orange text-black font-bold"
+                ? "bg-orange text-white font-bold"
                 : "bg-gray_1000 hover:bg-gray_800 text-white"
             }`}
           >

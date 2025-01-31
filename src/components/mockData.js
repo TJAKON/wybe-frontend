@@ -8,8 +8,8 @@ const mockData = [
       description:
         "Bitcoin is the first decentralized digital currency, enabling peer-to-peer transactions on a secure blockchain.",
       symbol: "BTC",
-      marketCap: "1.2T",
-      price: "30,000 USD",
+      marketCap: "1.9T",
+      price: "1,03,000 USD",
       holderDistribution: {
         whales: "50%",
         investors: "30%",

@@ -47,7 +47,7 @@ const LaunchCard = ({
 
       {/* Progress Bar */}
       <div className="mt-4 font-jetbrains">
-        <div className="flex justify-between text-sm text-gray_400 mb-1">
+        <div className="flex justify-between text-sm text-gray_400 ">
           <div className="flex gap-2">
             <span>{progress}%</span>
             <span>MC ${marketCap}</span>
@@ -58,7 +58,7 @@ const LaunchCard = ({
             <span>${18} vol</span>
           </div>
         </div>
-        <div className="relative bg-gray_700 h-2 rounded-full">
+        <div className="relative my-1 bg-gray_700 h-2 rounded-full">
           <div
             className="absolute top-0 left-0 h-full bg-gradient-to-r from-stone via-yellow to-orange rounded-full"
             style={{ width: `${progress}%` }}
@@ -67,14 +67,14 @@ const LaunchCard = ({
       </div>
 
       {/* Additional Info */}
-      <div className=" flex justify-between text-sm">
+      <div className=" flex justify-between text-[12px] font-jetbrains">
         <p>
           <strong>Price:</strong> {price}
         </p>
         <p>
-          <strong>Whales:</strong> {holderDistribution.whales} |{" "}
-          <strong>Investors:</strong> {holderDistribution.investors} |{" "}
-          <strong>Retail:</strong> {holderDistribution.retail}
+          <strong>🐋</strong> {holderDistribution.whales} |{" "}
+          <strong>💻</strong> {holderDistribution.investors} |{" "}
+          <strong>📊</strong> {holderDistribution.retail}
         </p>
       </div>
     </div>

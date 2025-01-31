@@ -4,7 +4,7 @@ const LaunchPage = () => {
   return (
     <div className="text-white">
       {/* Hero Section */}
-      <section className="text-center py-16 bg-gradient-to-r from-black to-stone">
+      <section className="hidden sm:block text-center py-16 bg-gradient-to-r from-black to-stone">
         <h2 className="flex justify-center gap-4 items-center w-full text-3xl text-center sm:text-4xl font-extrabold  capitalize leading-tight">
           LAUNCH YOUR TOKEN ON{" "}
           
