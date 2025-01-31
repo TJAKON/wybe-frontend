@@ -11,7 +11,7 @@ const HeroSection = () => {
   );
 
   return (
-    <div className="text-white pb-5">
+    <div className="text-white mb-5 border-b">
       {/* <div className="flex-1 space-y-6 text-center justify-items-center md:text-left">
         <img
           src="/wybeBanner.jpg"

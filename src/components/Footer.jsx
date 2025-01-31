@@ -80,7 +80,7 @@ const Footer = () => {
 
         {/* Terms of Use Link */}
         <div className="text-center text-sm mt-4">
-          <a href="/terms-of-use" className="text-orange hover:text-white">
+          <a href="/terms-of-use" className="text-orange hover:text-white font-jetbrains">
             Terms of Use
           </a>
         </div>

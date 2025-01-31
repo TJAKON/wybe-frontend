@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-Pitch_black text-white">
+    <nav className="bg-Pitch_black text-white border-b">
       <header className="flex justify-between items-center px-6 py-2">
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-8 items-center text-left font-poppins text-2xl transition-all duration-300">
@@ -66,7 +66,7 @@ const Navbar = () => {
       </header>
 
       {/* Mobile Menu (Fixed at Bottom) */}
-      <div className="md:hidden fixed bottom-0 z-50 left-0 w-full bg-Pitch_black text-white border-t border-orange">
+      <div className="lg:hidden fixed bottom-0 z-50 left-0 w-full bg-Pitch_black text-white border-t border-orange">
         <div className="flex items-center text-center justify-evenly py-4">
           <Link
             to="/launch"
@@ -99,15 +99,29 @@ const Navbar = () => {
             Launch Token
           </Link>
           <button
-            className="md:hidden text-orange duration-300 focus:outline-none text-3xl"
+            className="lg:hidden text-orange duration-300 focus:outline-none"
             onClick={toggleMenu}
           >
-            {isOpen ? "" : <AiOutlineMenu />}
+            {isOpen ? (
+               <>
+               <div className="text-center transition-all duration-300 justify-items-center m-0 items-center justify-center text-[14px]">
+                 <AiOutlineMenu className=" w-6 h-6" />
+                 Menu
+               </div>
+             </>
+            ) : (
+              <>
+                <div className="text-center transition-all duration-300 justify-items-center m-0 items-center justify-center text-[14px]">
+                  <AiOutlineMenu className=" w-6 h-6" />
+                  Menu
+                </div>
+              </>
+            )}
           </button>
 
           {isOpen && (
             <>
-              <div className=" absolute w-[320px] rounded-lg transition-all duration-300 bottom-16 right-0 z-50 md:hidden bg-Pitch_black text-white">
+              <div className=" absolute w-[356px] rounded-lg transition-all duration-300 bottom-16 right-8 z-50 lg:hidden bg-gray_1000 text-white">
                 <div className="border-b border-orange p-5">
                   <div className="flex w-full pb-3 items-center justify-between">
                     <img src="/wybe.svg" className="w-16" alt="Wybe Logo" />

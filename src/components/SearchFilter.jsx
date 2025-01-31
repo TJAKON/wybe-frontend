@@ -14,7 +14,7 @@ const SearchFilter = () => {
   };
 
   return (
-    <div className="text-white w-full py-8">
+    <div className="text-white w-full py-3">
       {/* Search and Filter Inputs */}
       <div className="flex flex-col sm:flex-row justify-center items-center py-4 space-y-4 sm:space-y-0 sm:space-x-6">
         <input
@@ -52,7 +52,7 @@ const SearchFilter = () => {
         {activeTab === "all" && (
           <>
             <p className="text-center text-gray_300">All coins listing</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
               {mockData.map((coin) => (
                 <LaunchCard key={coin.id} {...coin} />
               ))}
@@ -62,7 +62,7 @@ const SearchFilter = () => {
         {activeTab === "trading" && (
           <>
             <p className="text-center text-gray_300">Top trading tokens...</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
               {mockData.map((coin) => (
                 <LaunchCard key={coin.id} {...coin} />
               ))}
@@ -74,7 +74,7 @@ const SearchFilter = () => {
             <p className="text-center text-gray_300">
               Finalized projects and tokens...
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
               {mockData.map((coin) => (
                 <LaunchCard key={coin.id} {...coin} />
               ))}
@@ -86,7 +86,7 @@ const SearchFilter = () => {
             <p className="text-center text-gray_300">
               Top market cap tokens...
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
               {mockData.map((coin) => (
                 <LaunchCard key={coin.id} {...coin} />
               ))}
@@ -98,7 +98,7 @@ const SearchFilter = () => {
             <p className="text-center text-gray_300">
               Newly launched tokens...
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6 p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 p-6">
               {mockData.map((coin) => (
                 <LaunchCard key={coin.id} {...coin} />
               ))}
