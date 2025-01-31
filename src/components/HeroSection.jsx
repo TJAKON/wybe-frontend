@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import mockData from "./mockData"; // Importing the mock data
 
 const HeroSection = () => {
@@ -18,18 +19,64 @@ const HeroSection = () => {
           className="mx-auto md:mx-0 w-full h-auto object-cover"
         />
       </div> */}
-      <div className="flex-1 hidden sm:block w-full text-center justify-items-center md:text-left">
+      {/* <div className="flex-1 relative hidden sm:block w-full text-center justify-items-center md:text-left">
         <img
+          // src="/window_banner.svg"
           src="/wybeBanner.jpg"
           alt="Logo"
           className="mx-auto md:mx-0 w-full h-auto"
         />
+        <div className=" absolute w-full px-4 flex flex-col md:flex-row items-center justify-center bottom-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="flex w-1/3 justify-between">
+
+          <Link to="/launch">
+            <button className="px-8 py-3 rounded-2xl font-bold text-xl font-poppins text-white bg-transparent border border-white hover:bg-white hover:text-gray_1000 transition-all duration-300">
+              How it works
+            </button>
+          </Link>
+          <Link to="/launch">
+            <button className="px-8 py-3 rounded-2xl font-bold text-xl font-poppins bg-orange border border-white hover:opacity-80 hover:text-white transition-all duration-300">
+              Launch Token
+            </button>
+          </Link>
+        </div>
+        </div>
+      </div> */}
+
+      <div className="flex-1 relative hidden sm:block w-full text-center md:text-left">
+        {/* Background Banner */}
+        <img
+          src="/banner.svg"
+          alt="Logo"
+          className="mx-auto md:mx-0 w-full h-auto object-cover rounded-lg"
+        />
+
+        {/* Overlay Buttons Container */}
+        <div className="hidden xl:block absolute w-full px-4 items-center justify-center bottom-5 ">
+          <div className="flex flex-col sm:flex-row w-full sm:w-auto justify-center gap-4 sm:gap-6">
+            {/* How It Works Button */}
+            <Link to="/launch">
+              <button className="px-6 lg:px-8 py-3 rounded-xl font-bold text-sm xl:text-xl font-poppins text-white bg-transparent border border-white hover:bg-white hover:text-gray_900 transition-all duration-300">
+                How it works
+              </button>
+            </Link>
+
+            {/* Launch Token Button */}
+            <Link to="/launch">
+              <button className="px-6 lg:px-8 py-3 rounded-xl font-bold text-sm xl:text-xl font-poppins bg-orange border border-white hover:opacity-80 hover:text-white transition-all duration-300">
+                Launch Token
+              </button>
+            </Link>
+          </div>
+        </div>
       </div>
+
       <div className="flex-1 block sm:hidden w-auto sm:h-[500px] text-center justify-items-center md:text-left">
         <img
-          src="/wybeBanner.jpg"
+          src="/banner_mobile.svg"
+          // src="/wybeBanner.jpg"
           alt="Logo"
-          className="mx-auto md:mx-0 w-auto h-[500px] sm:h-[500px] object-cover"
+          className="w-full h-auto"
         />
       </div>
 

@@ -674,20 +674,21 @@ const CoinDetailsSection = () => {
                 alt={coin.name}
                 className="w-16 h-16 rounded-full border"
               />
-              <div>
+              <div className="">
                 <h2 className="text-lg font-bold text-yellow-500 ">
-                  Created By:
+                  Created By :
                 </h2>
                 <h3 className="text-2xl font-bold text-gray-200">
                   {coin.creator}
                 </h3>
               </div>
             </div>
-            <p className="mt-4 text-gray-400 font-jetbrains">
+            <p className="mt-4 text-gray_400 font-jetbrains">
               {coin.description}
             </p>
-            <p className="mt-2 font-bold text-yellow-500 font-jetbrains">
-              Contract: {coin.contractAddress}
+            <p className="mt-2 overflow-x-auto font-bold text-dark_yellow font-jetbrains">
+              Contract:
+              <span>{coin.contractAddress}</span>
             </p>
           </div>
 

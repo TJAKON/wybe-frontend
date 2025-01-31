@@ -31,7 +31,7 @@ const SearchFilter = () => {
       </div>
 
       {/* Tabs */}
-      <div className="flex justify-center items-center py-4 space-x-4">
+      <div className="flex overflow-x-auto justify-center items-center py-4 space-x-4">
         {tabs.map((tab) => (
           <button
             key={tab}
