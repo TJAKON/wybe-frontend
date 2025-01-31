@@ -81,7 +81,7 @@ const Navbar = () => {
             className="text-center justify-items-center m-0 items-center justify-center text-[14px]"
           >
             <FaRankingStar className=" w-6 h-6" />
-            Ranting
+            Ranking
           </Link>
 
           <Link
