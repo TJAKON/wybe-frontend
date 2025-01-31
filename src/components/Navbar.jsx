@@ -20,7 +20,7 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-8 items-center text-left font-poppins text-2xl transition-all duration-300">
           <Link to="/" className="font-poppins italic flex items-center">
-            <img src="/wybe.svg" className="w-20" alt="Wybe Logo" />
+            <img src="/1.svg" className="w-20" alt="Wybe Logo" />
           </Link>
           <Link
             to="/"
@@ -38,8 +38,8 @@ const Navbar = () => {
 
         {/* Social Icons and Buttons */}
         <div className="hidden md:flex space-x-4 items-center">
-          <FaXTwitter className="border border-white hover:bg-transparent transition-all duration-300 rounded-2xl hover:text-white text-white w-12 h-12 p-2" />
-          <FaTelegram className="border text-blue border-white hover:bg-transparent transition-all duration-300 rounded-2xl hover:text-white hover:border-white w-12 h-12 p-2" />
+          <FaXTwitter className="border border-white hover:bg-transparent transition-all duration-300 rounded-2xl hover:text-white text-white w-12 h-12 p-3" />
+          <FaTelegram className="border text-blue border-white hover:bg-transparent transition-all duration-300 rounded-2xl hover:text-white hover:border-white w-12 h-12 p-3" />
           <Link to="/launch">
             <button className="flex items-center gap-2 px-6 py-3 rounded-2xl text-xl font-bold font-poppins bg-transparent border border-white hover:bg-white hover:text-black transition-all duration-300">
              Wybe Turbo  
@@ -56,7 +56,7 @@ const Navbar = () => {
           to="/"
           className="md:hidden font-poppins italic flex items-center"
         >
-          <img src="/wybe.svg" className="w-20" alt="Wybe Logo" />
+          <img src="/1.svg" className="w-20" alt="Wybe Logo" />
         </Link>
 
         <button className="md:hidden p-3 rounded-lg text-[14px] border border-white font-bold font-poppins bg-orange ">
@@ -124,7 +124,7 @@ const Navbar = () => {
               <div className=" absolute w-[356px] rounded-lg transition-all duration-300 bottom-16 right-8 z-50 lg:hidden bg-gray_1000 text-white">
                 <div className="border-b border-orange p-5">
                   <div className="flex w-full pb-3 items-center justify-between">
-                    <img src="/wybe.svg" className="w-16" alt="Wybe Logo" />
+                    <img src="/1.svg" className="w-16" alt="Wybe Logo" />
                     <button
                       className="md:hidden text-orange duration-300 focus:outline-none text-3xl"
                       onClick={toggleMenu}

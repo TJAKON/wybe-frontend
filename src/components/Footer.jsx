@@ -8,7 +8,7 @@ const Footer = () => {
           {/* Logo and description */}
           <div className="space-y-4  text-center justify-items-center">
             <img
-              src="/wybe.svg"
+              src="/1.svg"
               alt="Logo"
               className="w-40 h-auto mx-auto sm:mx-0"
             />
