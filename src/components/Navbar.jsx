@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-Pitch_black text-white border-b">
+    <nav className="bg-Pitch_black text-white">
       <header className="flex justify-between items-center px-6 py-2">
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-8 items-center text-left font-poppins text-2xl transition-all duration-300">
