@@ -24,13 +24,13 @@ const Navbar = () => {
           </Link>
           <Link
             to="/"
-            className="hover:text-orange underline transition-all duration-300"
+            className="hover:text-orange transition-all duration-300"
           >
             Home
           </Link>
           <Link
             to="/ranking"
-            className="hover:text-orange underline transition-all duration-300"
+            className="hover:text-orange transition-all duration-300"
           >
             Ranking
           </Link>
@@ -38,15 +38,15 @@ const Navbar = () => {
 
         {/* Social Icons and Buttons */}
         <div className="hidden md:flex space-x-4 items-center">
-          <FaXTwitter className="border border-orange hover:bg-purple transition-all duration-300 rounded-2xl hover:text-white hover:border-purple text-white w-12 h-12 p-2" />
-          <FaTelegram className="border border-orange hover:bg-purple transition-all duration-300 rounded-2xl hover:text-white hover:border-purple text-white w-12 h-12 p-2" />
+          <FaXTwitter className="border border-white hover:bg-transparent transition-all duration-300 rounded-2xl hover:text-white text-white w-12 h-12 p-2" />
+          <FaTelegram className="border text-blue border-white hover:bg-transparent transition-all duration-300 rounded-2xl hover:text-white hover:border-white w-12 h-12 p-2" />
           <Link to="/launch">
-            <button className="px-6 py-3 rounded-2xl font-bold font-poppins bg-transparent border border-orange hover:bg-orange hover:text-white transition-all duration-300">
-              Launch Token
+            <button className="px-6 py-3 rounded-2xl text-xl font-bold font-poppins bg-transparent border border-white hover:bg-white hover:text-black transition-all duration-300">
+              Wybe Turbo
             </button>
           </Link>
           <button className="px-6 py-3 rounded-2xl text-xl font-bold font-poppins bg-orange hover:bg-purple hover:text-white transition-all duration-300">
-            CONNECT WALLET
+            Connect Wallet
           </button>
         </div>
 

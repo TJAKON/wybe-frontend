@@ -962,11 +962,11 @@ const CoinDetailsSection = () => {
 
           {/* Buy/Sell Box */}
           <div className="hidden sm:block bg-black hover:border-gray_900 hover:bg-stone transition-all duration-300 border p-6 rounded-2xl shadow-lg">
-            <div className="flex justify-between">
-              <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-2xl font-bold text-black hover:bg-purple hover:text-white">
+            <div className="flex justify-between w-full gap-3">
+              <button className="bg-[#28984c] w-1/2 transition-all duration-300 px-4 py-2 rounded-2xl font-bold text-white hover:bg-white hover:text-black">
                 BUY
               </button>
-              <button className="bg-orange transition-all duration-300 px-4 py-2 rounded-2xl font-bold text-black hover:bg-purple hover:text-white">
+              <button className="bg-red w-1/2 transition-all duration-300 px-4 py-2 rounded-2xl font-bold text-white hover:bg-white  hover:text-black">
                 SELL
               </button>
             </div>

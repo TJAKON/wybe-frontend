@@ -67,7 +67,7 @@ const LaunchCard = ({
       </div>
 
       {/* Additional Info */}
-      {/* <div className=" flex justify-between text-sm">
+      <div className=" flex justify-between text-sm">
         <p>
           <strong>Price:</strong> {price}
         </p>
@@ -76,7 +76,7 @@ const LaunchCard = ({
           <strong>Investors:</strong> {holderDistribution.investors} |{" "}
           <strong>Retail:</strong> {holderDistribution.retail}
         </p>
-      </div> */}
+      </div>
     </div>
   );
 };

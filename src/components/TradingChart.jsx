@@ -14,10 +14,10 @@ const TradingChart = ({ data }) => {
       },
       grid: {
         vertLines: {
-          color: "#424242", // Grid color
+          color: "#282828", // Grid color
         },
         horzLines: {
-          color: "#424242", // Grid color
+          color: "#282828", // Grid color
         },
       },
       timeScale: {

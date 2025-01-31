@@ -63,7 +63,7 @@ const HeroSection = () => {
 
             {/* Launch Token Button */}
             <Link to="/launch">
-              <button className="px-6 lg:px-8 py-3 rounded-xl font-bold text-sm xl:text-xl font-poppins bg-orange border border-white hover:opacity-80 hover:text-white transition-all duration-300">
+              <button className="px-6 lg:px-8 py-3 rounded-xl font-bold text-sm xl:text-xl font-poppins bg-orange border border-white hover:bg-[#28984c] hover:text-white transition-all duration-300">
                 Launch Token
               </button>
             </Link>
@@ -73,7 +73,7 @@ const HeroSection = () => {
 
       <div className="flex-1 block sm:hidden w-auto sm:h-[500px] text-center justify-items-center md:text-left">
         <img
-          src="/banner_mobile.svg"
+          src="/banner_mobile2.svg"
           // src="/wybeBanner.jpg"
           alt="Logo"
           className="w-full h-auto"
