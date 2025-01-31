@@ -5,6 +5,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { PiRocketLaunchDuotone } from "react-icons/pi";
 import { CiCircleQuestion, CiGift, CiSearch } from "react-icons/ci";
 import { LuWallet } from "react-icons/lu";
+import { TfiCup } from "react-icons/tfi";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +58,7 @@ const Navbar = () => {
           <img src="/wybe.svg" className="w-20" alt="Wybe Logo" />
         </Link>
 
-        <button className="md:hidden p-3 rounded-lg text-[12px] border border-white font-bold font-poppins bg-orange ">
+        <button className="md:hidden p-3 rounded-lg text-[14px] border border-white font-bold font-poppins bg-orange ">
           CONNECT WALLET
         </button>
 
@@ -69,7 +70,7 @@ const Navbar = () => {
         <div className="flex items-center text-center justify-evenly py-4">
           <Link
             to="/launch"
-            className="text-center justify-items-center m-0 self-center place-self-center items-center justify-center text-[12px]"
+            className="text-center justify-items-center m-0 self-center place-self-center items-center justify-center text-[14px]"
           >
             <CiSearch className=" w-6 h-6" />
             Explore
@@ -77,21 +78,22 @@ const Navbar = () => {
 
           <Link
             to="/launch"
-            className="text-center justify-items-center m-0 items-center justify-center text-[12px]"
+            className="text-center justify-items-center m-0 items-center justify-center text-[14px]"
           >
-            <CiGift className=" w-6 h-6" />
-            Referals
+            <FaRankingStar className=" w-6 h-6" />
+            Raning
           </Link>
+
           <Link
             to="/launch"
-            className="text-center justify-items-center m-0 items-center justify-center text-[12px]"
+            className="text-center justify-items-center m-0 items-center justify-center text-[14px]"
           >
-            <CiSearch className=" w-6 h-6" />
+            <TfiCup className=" w-6 h-6" />
             Rewards
           </Link>
           <Link
             to="/launch"
-            className="text-center justify-items-center m-0 items-center justify-center text-[12px]"
+            className="text-center justify-items-center m-0 items-center justify-center text-[14px]"
           >
             <PiRocketLaunchDuotone className=" w-6 h-6" />
             Launch Token
@@ -130,8 +132,8 @@ const Navbar = () => {
                       className="p-3 flex gap-3 items-center"
                       onClick={toggleMenu}
                     >
-                      <FaRankingStar className="w-6 h-6" />
-                      Ranking
+                      <CiGift className="w-6 h-6" />
+                      Referals
                     </Link>
                   </div>
                 </div>
